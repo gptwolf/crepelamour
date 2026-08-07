@@ -57,9 +57,9 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-ink-soft sm:text-base">
-            Made-to-order crepes and mini buttermilk pancakes, served from a
-            custom cart at weddings, baby showers, birthdays, and brand events
-            across Southern California.
+            Mobile crêpe catering for Southern California — made-to-order sweet
+            &amp; savory crepes and mini buttermilk pancakes from a custom cart
+            at weddings, baby showers, birthdays, and brand events.
           </p>
         </div>
 

@@ -55,6 +55,10 @@ export default function Footer() {
           © {new Date().getFullYear()} Crepe L&apos;Amour · Mobile Crêpe
           Catering · Southern California
         </p>
+        <p className="max-w-sm text-[11px] leading-relaxed text-ink-soft/70">
+          Made-to-order crepe and mini pancake catering for weddings, showers,
+          birthdays, corporate, and brand events.
+        </p>
         <Link
           href="/"
           className="text-[10px] tracking-widest text-ink-soft/50 uppercase"

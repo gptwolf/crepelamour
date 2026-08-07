@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans, Great_Vibes } from "next/font/google";
+import JsonLd from "@/components/JsonLd";
+import { getSiteUrl, siteConfig } from "@/lib/site";
+import { siteStructuredData } from "@/lib/structured-data";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -20,10 +23,29 @@ const script = Great_Vibes({
   weight: ["400"],
 });
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
-  title: "Crepe L'Amour — Mobile Crêpe Catering | Southern California",
-  description:
-    "Made-to-order crepes and mini buttermilk pancakes from a custom cart. Sweet & savory crepe bar catering for weddings, baby showers, birthdays, and brand events across SoCal.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Crepe L'Amour — Mobile Crêpe Catering | Southern California",
+    template: "%s | Crepe L'Amour",
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       { url: "/favicon/favicon.ico", sizes: "any" },
@@ -34,17 +56,28 @@ export const metadata: Metadata = {
   },
   manifest: "/favicon/site.webmanifest",
   openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    url: siteUrl,
+    siteName: siteConfig.name,
     title: "Crepe L'Amour — Mobile Crêpe Catering",
     description:
       "Made-to-order crepes & mini buttermilk pancakes for your event. Southern California cart catering.",
-    type: "website",
-    images: [{ url: "/logo/logo.png", width: 1024, height: 1024, alt: "Crepe L'Amour" }],
+    images: [
+      {
+        url: siteConfig.ogImage.url,
+        width: siteConfig.ogImage.width,
+        height: siteConfig.ogImage.height,
+        alt: siteConfig.ogImage.alt,
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "Crepe L'Amour",
-    description: "Mobile crêpe catering for events across Southern California.",
-    images: ["/logo/logo.png"],
+    card: "summary_large_image",
+    title: "Crepe L'Amour — Mobile Crêpe Catering",
+    description:
+      "Mobile crêpe catering for weddings, showers, birthdays & brand events across Southern California.",
+    images: [siteConfig.ogImage.url],
   },
 };
 
@@ -54,7 +87,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${display.variable} ${body.variable} ${script.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-paper text-ink">{children}</body>
+      <body className="min-h-full flex flex-col bg-paper text-ink">
+        <JsonLd data={siteStructuredData()} />
+        {children}
+      </body>
     </html>
   );
 }

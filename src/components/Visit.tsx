@@ -36,8 +36,8 @@ export default function Visit() {
               </h2>
               <p className="mt-4 max-w-md leading-relaxed text-ink/80">
                 Share your date, guest count, and vibe — sweet, savory, or both
-                — and we&apos;ll put together a cart experience guests actually
-                line up for.
+                — and we&apos;ll put together mobile crepe catering guests
+                actually line up for across Southern California.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a

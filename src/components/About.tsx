@@ -52,9 +52,9 @@ export default function About() {
             to you
           </h2>
           <p className="mt-5 leading-relaxed text-ink-soft">
-            Crepe L&apos;Amour is a mobile crepe catering company — not a café.
-            We roll up with a full cart, toppings bar, and made-to-order sweet
-            or savory crepes so guests watch their plate come together live.
+            Crepe L&apos;Amour is a mobile crepe catering company. We roll up
+            with a full cart, toppings bar, and made-to-order sweet or savory
+            crepes so guests watch their plate come together live.
           </p>
           <p className="mt-4 leading-relaxed text-ink-soft">
             From Hello Kitty minis and bridal showers to custom-wrapped carts
