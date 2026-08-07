@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #fff8f5;
+  --blush: #f8c8dc;
+  --soft-pink: #fadadd;
+  --rose: #e8a0bf;
+  --deep-rose: #c47a9e;
+  --ink: #5c2a3d;
+  --ink-soft: #7a4458;
+  --gold: #c9a86c;
+  --white: #ffffff;
+  --background: var(--cream);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-blush: var(--blush);
+  --color-soft-pink: var(--soft-pink);
+  --color-rose: var(--rose);
+  --color-deep-rose: var(--deep-rose);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-gold: var(--gold);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+  --font-script: var(--font-script);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Soft paper wash */
+.bg-paper {
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 10% 0%, rgba(248, 200, 220, 0.45), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(232, 160, 191, 0.25), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(250, 218, 221, 0.4), transparent 55%);
+}
+
+/* Torn / soft edge card */
+.polaroid {
+  background: #fff;
+  padding: 0.75rem 0.75rem 2.25rem;
+  box-shadow:
+    0 2px 4px rgba(92, 42, 61, 0.06),
+    0 12px 28px rgba(92, 42, 61, 0.1);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+.polaroid:hover {
+  transform: translateY(-6px) rotate(0deg) !important;
+  box-shadow:
+    0 8px 16px rgba(92, 42, 61, 0.08),
+    0 24px 48px rgba(92, 42, 61, 0.14);
+}
+
+.polaroid figcaption {
+  font-family: var(--font-script), cursive;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-top: 0.65rem;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+/* Glitter star */
+.glitter-star {
+  display: inline-block;
+  color: #ff6eb4;
+  filter: drop-shadow(0 0 4px rgba(255, 110, 180, 0.65));
+  animation: twinkle 2.8s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12) rotate(8deg);
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-soft {
+  animation: float-soft 5s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+
+.fade-up-delay-1 {
+  animation-delay: 0.12s;
+}
+.fade-up-delay-2 {
+  animation-delay: 0.24s;
+}
+.fade-up-delay-3 {
+  animation-delay: 0.36s;
+}
+
+/* Soft pink button */
+.btn-rose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #f3a6c4 0%, #e88bb0 50%, #d978a4 100%);
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1.75rem;
+  box-shadow: 0 8px 24px rgba(216, 120, 164, 0.35);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.btn-rose:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 12px 28px rgba(216, 120, 164, 0.45);
+}
+
+.btn-outline-rose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--rose);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1.75rem;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-outline-rose:hover {
+  background: rgba(248, 200, 220, 0.55);
+  transform: translateY(-2px);
+}
+
+/* Section divider heart */
+.heart-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--rose);
+}
+
+.heart-divider::before,
+.heart-divider::after {
+  content: "";
+  height: 1px;
+  width: min(120px, 20vw);
+  background: linear-gradient(90deg, transparent, var(--rose), transparent);
+}
+
+/* Soft scroll selection */
+::selection {
+  background: var(--blush);
+  color: var(--ink);
+}
