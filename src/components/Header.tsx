@@ -5,11 +5,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#clients", label: "Clients" },
-  { href: "#menu", label: "Menu" },
-  { href: "#gallery", label: "Events" },
-  { href: "#about", label: "About" },
-  { href: "#book", label: "Book" },
+  { href: "/#menu", label: "Menu" },
+  { href: "/crepes", label: "Crepes" },
+  { href: "/minis", label: "Minis" },
+  { href: "/dubai-chocolate", label: "Dubai" },
+  { href: "/#gallery", label: "Events" },
+  { href: "/#book", label: "Book" },
 ];
 
 export default function Header() {
@@ -32,7 +33,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 md:px-8">
-        <Link href="#" className="group flex items-center gap-2.5">
+        <Link href="/" className="group flex items-center gap-2.5">
           <Image
             src="/logo/logo.png"
             alt="Crepe L'Amour"
@@ -49,25 +50,25 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-5 lg:gap-6 lg:flex">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               className="text-sm font-medium tracking-wide text-ink-soft transition-colors hover:text-deep-rose"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a href="#book" className="btn-rose !px-5 !py-2.5 text-sm">
+          <Link href="/#book" className="btn-rose !px-5 !py-2.5 text-sm">
             Book Us
-          </a>
+          </Link>
         </nav>
 
         <button
           type="button"
           aria-label="Toggle menu"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-rose/40 text-ink md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-rose/40 text-ink lg:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           <span className="text-lg">{open ? "✕" : "☰"}</span>
@@ -75,25 +76,39 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-blush/60 bg-white/95 px-5 py-4 backdrop-blur-md md:hidden">
+        <div className="border-t border-blush/60 bg-white/95 px-5 py-4 backdrop-blur-md lg:hidden">
           <nav className="flex flex-col gap-3">
+            <Link
+              href="/#clients"
+              onClick={() => setOpen(false)}
+              className="rounded-xl px-3 py-2 text-ink-soft hover:bg-soft-pink/50"
+            >
+              Clients
+            </Link>
             {links.map((l) => (
-              <a
+              <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
                 className="rounded-xl px-3 py-2 text-ink-soft hover:bg-soft-pink/50"
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#book"
+            <Link
+              href="/#about"
+              onClick={() => setOpen(false)}
+              className="rounded-xl px-3 py-2 text-ink-soft hover:bg-soft-pink/50"
+            >
+              About
+            </Link>
+            <Link
+              href="/#book"
               onClick={() => setOpen(false)}
               className="btn-rose mt-1 text-center text-sm"
             >
               Book Us
-            </a>
+            </Link>
           </nav>
         </div>
       )}

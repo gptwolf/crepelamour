@@ -17,25 +17,31 @@ export default function Footer() {
             CREPE L&apos;AMOUR
           </span>
         </div>
-        <p className="font-[family-name:var(--font-script)] text-2xl text-deep-rose">
+        <p className="w-full text-center font-[family-name:var(--font-script)] text-2xl text-deep-rose">
           love in every bite
         </p>
         <nav className="flex flex-wrap justify-center gap-5 text-sm text-ink-soft">
-          <a href="#clients" className="hover:text-deep-rose">
+          <Link href="/#clients" className="hover:text-deep-rose">
             Clients
-          </a>
-          <a href="#menu" className="hover:text-deep-rose">
+          </Link>
+          <Link href="/#menu" className="hover:text-deep-rose">
             Menu
-          </a>
-          <a href="#gallery" className="hover:text-deep-rose">
+          </Link>
+          <Link href="/crepes" className="hover:text-deep-rose">
+            Crepes
+          </Link>
+          <Link href="/minis" className="hover:text-deep-rose">
+            Minis
+          </Link>
+          <Link href="/dubai-chocolate" className="hover:text-deep-rose">
+            Dubai Chocolate
+          </Link>
+          <Link href="/#gallery" className="hover:text-deep-rose">
             Events
-          </a>
-          <a href="#about" className="hover:text-deep-rose">
-            About
-          </a>
-          <a href="#book" className="hover:text-deep-rose">
+          </Link>
+          <Link href="/#book" className="hover:text-deep-rose">
             Book
-          </a>
+          </Link>
           <a
             href="https://www.instagram.com/crepe_lamour/"
             target="_blank"
@@ -50,10 +56,10 @@ export default function Footer() {
           Catering · Southern California
         </p>
         <Link
-          href="#"
+          href="/"
           className="text-[10px] tracking-widest text-ink-soft/50 uppercase"
         >
-          back to top ♡
+          back to home ♡
         </Link>
       </div>
     </footer>

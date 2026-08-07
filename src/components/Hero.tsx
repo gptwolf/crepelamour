@@ -20,7 +20,7 @@ const heroReels = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-24 pb-16 md:pt-28 md:pb-24">
+    <section className="relative overflow-hidden pt-24 md:pt-28">
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-32 h-[70vw] max-h-[520px] w-[90vw] max-w-4xl -translate-x-1/2 rounded-full bg-blush/60 blur-3xl"
@@ -105,7 +105,11 @@ export default function Hero() {
             Book the Cart
           </a>
         </div>
-        <p className="fade-up fade-up-delay-3 mt-4 font-[family-name:var(--font-script)] text-2xl text-deep-rose">
+      </div>
+
+      {/* Tagline band — vertically centered between CTAs and next section */}
+      <div className="fade-up fade-up-delay-3 flex min-h-[6.5rem] items-center justify-center px-5 md:min-h-[8.5rem]">
+        <p className="text-center font-[family-name:var(--font-script)] text-2xl text-deep-rose md:text-3xl">
           love in every bite
         </p>
       </div>
