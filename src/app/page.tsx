@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import SocialProof from "@/components/SocialProof";
 import MenuSection from "@/components/MenuSection";
 import Gallery from "@/components/Gallery";
 import About from "@/components/About";
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <SocialProof />
         <MenuSection />
         <Gallery />
         <About />

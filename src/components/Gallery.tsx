@@ -1,8 +1,23 @@
 import Image from "next/image";
 
-const shots = [
+type Shot =
+  | {
+      type?: "image";
+      src: string;
+      caption: string;
+      rotate: string;
+    }
+  | {
+      type: "video";
+      src: string;
+      poster: string;
+      caption: string;
+      rotate: string;
+    };
+
+const shots: Shot[] = [
   {
-    src: "/images/instagram/hello-kitty-mini-pancakes.png",
+    src: "/images/instagram/hello-kitty-full-spread.png",
     caption: "Hello Kitty minis",
     rotate: "-rotate-3",
   },
@@ -20,6 +35,13 @@ const shots = [
     src: "/images/instagram/wedding-crepe-cart.png",
     caption: "wedding cart",
     rotate: "rotate-3",
+  },
+  {
+    type: "video",
+    src: "/videos/instagram/chuyin-album-release.mp4",
+    poster: "/images/instagram/chuyin-album-release.jpg",
+    caption: "Chuyin album release",
+    rotate: "-rotate-2",
   },
   {
     src: "/images/instagram/bridal-mini-pancakes.png",
@@ -73,17 +95,32 @@ export default function Gallery() {
         <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 md:gap-8">
           {shots.map((shot) => (
             <figure
-              key={shot.src + shot.caption}
-              className={`polaroid ${shot.rotate} mx-auto w-full max-w-[260px]`}
+              key={shot.caption + shot.src}
+              className={`polaroid transform-gpu ${shot.rotate} mx-auto w-full max-w-[260px]`}
             >
-              <div className="relative aspect-square overflow-hidden bg-soft-pink/30">
-                <Image
-                  src={shot.src}
-                  alt={shot.caption}
-                  fill
-                  sizes="(max-width: 768px) 45vw, 260px"
-                  className="object-cover"
-                />
+              <div className="polaroid-media relative aspect-square bg-soft-pink/30">
+                {shot.type === "video" ? (
+                  <video
+                    className="absolute inset-0 h-full w-full object-cover [transform:translateZ(0)]"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    poster={shot.poster}
+                    aria-label={shot.caption}
+                  >
+                    <source src={shot.src} type="video/mp4" />
+                  </video>
+                ) : (
+                  <Image
+                    src={shot.src}
+                    alt={shot.caption}
+                    fill
+                    sizes="(max-width: 768px) 45vw, 260px"
+                    className="object-cover"
+                  />
+                )}
               </div>
               <figcaption>{shot.caption}</figcaption>
             </figure>

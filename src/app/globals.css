@@ -50,11 +50,17 @@ body {
     radial-gradient(ellipse 70% 50% at 50% 100%, rgba(250, 218, 221, 0.4), transparent 55%);
 }
 
-/* Torn / soft edge card */
+/* Polaroid card — soft radius + AA so rotated edges don’t stair-step */
 .polaroid {
   background: #fff;
   padding: 0.75rem 0.75rem 2.25rem;
+  border-radius: 4px;
+  outline: 1px solid rgba(255, 255, 255, 0.01);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /* subpixel AA for rotated boxes */
   box-shadow:
+    0 0 0 0.5px rgba(92, 42, 61, 0.08),
     0 2px 4px rgba(92, 42, 61, 0.06),
     0 12px 28px rgba(92, 42, 61, 0.1);
   transition:
@@ -63,10 +69,22 @@ body {
 }
 
 .polaroid:hover {
-  transform: translateY(-6px) rotate(0deg) !important;
+  /* keep GPU translate so edges stay smooth when un-tilting */
+  transform: translate3d(0, -6px, 0) rotate(0deg) !important;
   box-shadow:
+    0 0 0 0.5px rgba(92, 42, 61, 0.08),
     0 8px 16px rgba(92, 42, 61, 0.08),
     0 24px 48px rgba(92, 42, 61, 0.14);
+}
+
+.polaroid .polaroid-media {
+  border-radius: 2px;
+  overflow: hidden;
+  isolation: isolate;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* clips video/img cleanly inside the paper window */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .polaroid figcaption {

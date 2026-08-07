@@ -21,6 +21,9 @@ export default function Footer() {
           love in every bite
         </p>
         <nav className="flex flex-wrap justify-center gap-5 text-sm text-ink-soft">
+          <a href="#clients" className="hover:text-deep-rose">
+            Clients
+          </a>
           <a href="#menu" className="hover:text-deep-rose">
             Menu
           </a>
