@@ -9,22 +9,22 @@ export default function About() {
           <div className="absolute -bottom-6 -right-4 h-28 w-28 rounded-full bg-rose/30 blur-xl" />
           <div className="relative grid grid-cols-2 gap-3">
             <Image
-              src="/images/IMG_6293.jpg"
-              alt="Crepe L'Amour cart under pink umbrella"
+              src="/images/IMG_8498.jpg"
+              alt="Crepe bar next to giant pink bow flower wall"
               width={280}
               height={320}
               className="h-48 w-full rounded-3xl object-cover shadow-lg ring-4 ring-white md:h-64"
             />
             <Image
-              src="/images/IMG_8498.jpg"
-              alt="Crepe bar next to giant pink bow flower wall"
+              src="/images/IMG_8652.jpg"
+              alt="Crepe Bar cart with fringe umbrella at a courtyard event"
               width={280}
               height={320}
               className="mt-8 h-48 w-full rounded-3xl object-cover shadow-lg ring-4 ring-white md:h-64"
             />
             <Image
-              src="/images/instagram/wedding-crepe-cart.png"
-              alt="Wedding crepe cart setup"
+              src="/images/IMG_9623.jpg"
+              alt="La Crêperie cart overlooking hills at golden hour"
               width={280}
               height={200}
               className="col-span-2 h-40 w-full rounded-3xl object-cover shadow-lg ring-4 ring-white md:h-48"
