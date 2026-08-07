@@ -4,24 +4,23 @@ const heroReels = [
   {
     src: "/videos/instagram/hero/baby-chien-crepe.mp4",
     poster: "/videos/instagram/hero/baby-chien-crepe.jpg",
-    label: "Event crepes",
+    label: "Baby shower crepes",
   },
   {
     src: "/videos/instagram/hero/jewelry-collab-event.mp4",
     poster: "/videos/instagram/hero/jewelry-collab-event.jpg",
-    label: "Mini pancakes",
+    label: "Mini buttermilk pancakes",
   },
   {
     src: "/videos/instagram/hero/toystory-party-crepes.mp4",
     poster: "/videos/instagram/hero/toystory-party-crepes.jpg",
-    label: "Party cart",
+    label: "Custom party cart",
   },
 ];
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-24 pb-16 md:pt-28 md:pb-24">
-      {/* Soft ambient glow behind videos */}
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-32 h-[70vw] max-h-[520px] w-[90vw] max-w-4xl -translate-x-1/2 rounded-full bg-blush/60 blur-3xl"
@@ -45,24 +44,25 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto flex max-w-6xl flex-col items-center px-5 md:px-8">
-        {/* Tight intro — no giant logo; header already brands the site */}
         <div className="fade-up mb-6 text-center md:mb-8">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-rose/30 bg-white/60 px-4 py-1.5 text-xs font-medium tracking-[0.2em] uppercase text-deep-rose backdrop-blur-sm">
-            Premium Crêpe Catering
+            SoCal Crêpe Catering
           </div>
-          <h1 className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-[0.08em] text-ink sm:text-4xl md:text-5xl">
-            Real events.{" "}
+          <h1 className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-[0.06em] text-ink sm:text-4xl md:text-5xl">
+            Your event deserves more than dessert —
+            <br className="hidden sm:block" />
             <span className="font-[family-name:var(--font-script)] tracking-normal text-deep-rose">
-              Real bites.
+              {" "}
+              it deserves an experience.
             </span>
           </h1>
-          <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-ink-soft sm:text-base">
-            Made-to-order crepes &amp; mini pancakes for weddings, baby
-            showers, and every sweet celebration.
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-ink-soft sm:text-base">
+            Made-to-order crepes and mini buttermilk pancakes, served from a
+            custom cart at weddings, baby showers, birthdays, and brand events
+            across Southern California.
           </p>
         </div>
 
-        {/* Videos are the hero */}
         <div className="fade-up fade-up-delay-1 relative w-full max-w-5xl">
           <div className="pointer-events-none absolute -inset-4 rounded-[2.5rem] bg-rose/20 blur-2xl sm:-inset-8" />
           <div className="relative grid grid-cols-3 items-end gap-2 sm:gap-4 md:gap-5">
@@ -99,14 +99,14 @@ export default function Hero() {
 
         <div className="fade-up fade-up-delay-2 mt-8 flex flex-wrap items-center justify-center gap-3 md:mt-10">
           <a href="#menu" className="btn-rose">
-            Explore the Menu
+            See What We Serve
           </a>
-          <a href="#gallery" className="btn-outline-rose">
-            See Real Events
+          <a href="#book" className="btn-outline-rose">
+            Book the Cart
           </a>
         </div>
         <p className="fade-up fade-up-delay-3 mt-4 font-[family-name:var(--font-script)] text-2xl text-deep-rose">
-          tied with love
+          love in every bite
         </p>
       </div>
     </section>

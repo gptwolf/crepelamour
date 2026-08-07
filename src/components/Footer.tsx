@@ -18,20 +18,20 @@ export default function Footer() {
           </span>
         </div>
         <p className="font-[family-name:var(--font-script)] text-2xl text-deep-rose">
-          tied with love
+          love in every bite
         </p>
         <nav className="flex flex-wrap justify-center gap-5 text-sm text-ink-soft">
           <a href="#menu" className="hover:text-deep-rose">
             Menu
           </a>
           <a href="#gallery" className="hover:text-deep-rose">
-            Gallery
+            Events
           </a>
           <a href="#about" className="hover:text-deep-rose">
             About
           </a>
-          <a href="#visit" className="hover:text-deep-rose">
-            Visit
+          <a href="#book" className="hover:text-deep-rose">
+            Book
           </a>
           <a
             href="https://www.instagram.com/crepe_lamour/"
@@ -43,8 +43,8 @@ export default function Footer() {
           </a>
         </nav>
         <p className="text-xs text-ink-soft/80">
-          © {new Date().getFullYear()} Crepe L&apos;Amour · Premium Crêpe
-          Catering
+          © {new Date().getFullYear()} Crepe L&apos;Amour · Mobile Crêpe
+          Catering · Southern California
         </p>
         <Link
           href="#"

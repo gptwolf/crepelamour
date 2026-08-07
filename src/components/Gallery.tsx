@@ -3,32 +3,32 @@ import Image from "next/image";
 const shots = [
   {
     src: "/images/instagram/hello-kitty-mini-pancakes.png",
-    caption: "hello kitty minis",
+    caption: "Hello Kitty minis",
     rotate: "-rotate-3",
   },
   {
     src: "/images/instagram/poolside-crepe-bowl.png",
-    caption: "poolside princess",
+    caption: "poolside minis",
     rotate: "rotate-2",
   },
   {
     src: "/images/instagram/handheld-strawberry-banana-crepe.png",
-    caption: "strawberry banana",
+    caption: "strawberry banana crepe",
     rotate: "-rotate-1",
   },
   {
     src: "/images/instagram/wedding-crepe-cart.png",
-    caption: "wedding love story",
+    caption: "wedding cart",
     rotate: "rotate-3",
   },
   {
     src: "/images/instagram/bridal-mini-pancakes.png",
-    caption: "bridal bites",
+    caption: "bridal shower",
     rotate: "-rotate-2",
   },
   {
     src: "/images/instagram/hello-kitty-full-spread.png",
-    caption: "full kitty spread",
+    caption: "full sweet spread",
     rotate: "rotate-1",
   },
   {
@@ -38,12 +38,12 @@ const shots = [
   },
   {
     src: "/images/instagram/ballerina-robin-cart.png",
-    caption: "ballerina cart",
+    caption: "birthday cart",
     rotate: "-rotate-3",
   },
   {
     src: "/images/instagram/babyjurdi-balloon-cart.png",
-    caption: "oh boy balloons",
+    caption: "baby shower",
     rotate: "rotate-1",
   },
 ];
@@ -59,14 +59,14 @@ export default function Gallery() {
             ✦
           </span>
           <p className="mb-2 text-xs font-semibold tracking-[0.28em] uppercase text-deep-rose">
-            Real Events
+            From the cart
           </p>
           <h2 className="font-[family-name:var(--font-display)] text-4xl font-semibold tracking-wide text-ink md:text-5xl">
-            A Soft Scrapbook
+            Real celebrations
           </h2>
           <p className="mx-auto mt-3 max-w-md text-ink-soft">
-            Moments from real celebrations — crepe carts, mini stacks, and
-            blush everywhere.
+            Baby showers, weddings, birthdays, and brand events — same cart,
+            new theme every time.
           </p>
         </div>
 

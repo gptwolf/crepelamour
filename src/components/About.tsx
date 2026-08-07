@@ -10,7 +10,7 @@ export default function About() {
           <div className="relative grid grid-cols-2 gap-3">
             <Image
               src="/images/IMG_8498.jpg"
-              alt="Crepe bar next to giant pink bow flower wall"
+              alt="Crepe bar cart beside a giant pink bow flower wall"
               width={280}
               height={320}
               className="h-48 w-full rounded-3xl object-cover shadow-lg ring-4 ring-white md:h-64"
@@ -24,7 +24,7 @@ export default function About() {
             />
             <Image
               src="/images/IMG_9623.jpg"
-              alt="La Crêperie cart overlooking hills at golden hour"
+              alt="La Crêperie cart on a hillside terrace at golden hour"
               width={280}
               height={200}
               className="col-span-2 h-40 w-full rounded-3xl object-cover shadow-lg ring-4 ring-white md:h-48"
@@ -41,34 +41,34 @@ export default function About() {
 
         <div className="order-1 md:order-2">
           <p className="mb-2 text-xs font-semibold tracking-[0.28em] uppercase text-deep-rose">
-            Our Story
+            The cart
           </p>
           <h2 className="font-[family-name:var(--font-display)] text-4xl font-semibold tracking-wide text-ink md:text-5xl">
-            Made for the
+            We bring the
             <br />
             <span className="font-[family-name:var(--font-script)] text-deep-rose normal-case tracking-normal">
-              soft-hearted
-            </span>
+              crêperie
+            </span>{" "}
+            to you
           </h2>
           <p className="mt-5 leading-relaxed text-ink-soft">
-            Crepe L&apos;Amour brings a pretty little crêperie to your event —
-            blush carts, striped umbrellas, and made-to-order crepes that look
-            as lovely as they taste. From Hello Kitty minis to savory bars, we
-            fold every batter thin and finish each plate with a little extra
-            love.
+            Crepe L&apos;Amour is a mobile crepe catering company — not a café.
+            We roll up with a full cart, toppings bar, and made-to-order sweet
+            or savory crepes so guests watch their plate come together live.
           </p>
           <p className="mt-4 leading-relaxed text-ink-soft">
-            Whether it&apos;s a wedding, baby shower, quince, grad party, or
-            corporate celebration, we roll up with a full cart setup so your
-            guests get a polaroid-worthy moment and a warm bite.
+            From Hello Kitty minis and bridal showers to custom-wrapped carts
+            for kids&apos; birthdays, corporate lounges, and TV sets, every
+            setup is styled to match the moment — and every bite is made fresh
+            on site.
           </p>
 
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {[
-              "Made-to-order crepes",
-              "Mini buttermilk pancakes",
-              "Full cart & décor setups",
-              "Weddings · showers · events",
+              "Made-to-order on site",
+              "Sweet & savory menus",
+              "Custom cart branding",
+              "SoCal event catering",
             ].map((item) => (
               <li
                 key={item}

@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 
 const links = [
   { href: "#menu", label: "Menu" },
-  { href: "#gallery", label: "Gallery" },
+  { href: "#gallery", label: "Events" },
   { href: "#about", label: "About" },
-  { href: "#visit", label: "Visit" },
+  { href: "#book", label: "Book" },
 ];
 
 export default function Header() {
@@ -58,7 +58,7 @@ export default function Header() {
               {l.label}
             </a>
           ))}
-          <a href="#visit" className="btn-rose !px-5 !py-2.5 text-sm">
+          <a href="#book" className="btn-rose !px-5 !py-2.5 text-sm">
             Book Us
           </a>
         </nav>
@@ -87,7 +87,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#visit"
+              href="#book"
               onClick={() => setOpen(false)}
               className="btn-rose mt-1 text-center text-sm"
             >

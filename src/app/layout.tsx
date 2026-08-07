@@ -21,9 +21,9 @@ const script = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: "Crepe L'Amour — Premium Crêpe Catering",
+  title: "Crepe L'Amour — Mobile Crêpe Catering | Southern California",
   description:
-    "Premium crêpe catering for events — sweet & savory crepes, mini buttermilk pancakes, and princess-pretty setups for weddings, baby showers, and more.",
+    "Made-to-order crepes and mini buttermilk pancakes from a custom cart. Sweet & savory crepe bar catering for weddings, baby showers, birthdays, and brand events across SoCal.",
   icons: {
     icon: [
       { url: "/favicon/favicon.ico", sizes: "any" },
@@ -34,16 +34,16 @@ export const metadata: Metadata = {
   },
   manifest: "/favicon/site.webmanifest",
   openGraph: {
-    title: "Crepe L'Amour",
+    title: "Crepe L'Amour — Mobile Crêpe Catering",
     description:
-      "Premium crêpe catering — made-to-order crepes & mini pancakes for your sweetest events.",
+      "Made-to-order crepes & mini buttermilk pancakes for your event. Southern California cart catering.",
     type: "website",
     images: [{ url: "/logo/logo.png", width: 1024, height: 1024, alt: "Crepe L'Amour" }],
   },
   twitter: {
     card: "summary",
     title: "Crepe L'Amour",
-    description: "Premium crêpe catering for events.",
+    description: "Mobile crêpe catering for events across Southern California.",
     images: ["/logo/logo.png"],
   },
 };

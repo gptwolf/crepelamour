@@ -3,22 +3,22 @@ import Image from "next/image";
 const menu = [
   {
     name: "Hello Kitty Minis",
-    desc: "Fluffy Hello Kitty mini pancakes with Nutella, fresh strawberries, bananas & powdered sugar.",
-    price: "Catering",
+    desc: "Viral mini buttermilk pancakes shaped like Hello Kitty — Nutella, fresh strawberries, bananas & a sprinkle of powdered sugar.",
+    note: "Guest fave",
     tag: "Best Seller",
     image: "/images/instagram/hello-kitty-mini-pancakes.png",
   },
   {
-    name: "Strawberry Banana Crepe",
-    desc: "Hand-folded crepe with chocolate drizzle, banana, berries, whipped cream & a pretty finish.",
-    price: "Catering",
+    name: "Sweet Crepes",
+    desc: "Hand-folded and made to order — chocolate drizzle, Nutella, fresh fruit, whipped cream, and toppings your guests actually want.",
+    note: "Signature",
     tag: "Signature",
     image: "/images/instagram/handheld-strawberry-banana-crepe.png",
   },
   {
-    name: "Poolside Mini Stack",
-    desc: "Golden buttermilk minis, ice cream, fresh berries & crumble — made for sunny celebrations.",
-    price: "Catering",
+    name: "Mini Buttermilk Stacks",
+    desc: "Tiny stacks of happiness — soft, fluffy minis with ice cream, berries, crumble, and whatever toppings fit the party.",
+    note: "Crowd favorite",
     tag: "Crowd Fave",
     image: "/images/instagram/poolside-crepe-bowl.png",
   },
@@ -33,14 +33,14 @@ export default function MenuSection() {
         </div>
         <div className="mb-12 text-center">
           <p className="mb-2 text-xs font-semibold tracking-[0.28em] uppercase text-deep-rose">
-            The Menu
+            On the cart
           </p>
           <h2 className="font-[family-name:var(--font-display)] text-4xl font-semibold tracking-wide text-ink md:text-5xl">
             Sweet &amp; Savory
           </h2>
-          <p className="mx-auto mt-3 max-w-md text-ink-soft">
-            Made-to-order crepes and mini buttermilk pancakes for your event —
-            sweet, savory, and always pretty.
+          <p className="mx-auto mt-3 max-w-lg text-ink-soft">
+            Everything is made to order at your event. Sweet crepes, savory
+            crepes, and mini buttermilk pancakes — always a crowd favorite.
           </p>
         </div>
 
@@ -63,14 +63,9 @@ export default function MenuSection() {
                 </span>
               </div>
               <div className="p-5">
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="font-[family-name:var(--font-display)] text-xl font-semibold text-ink">
-                    {item.name}
-                  </h3>
-                  <span className="shrink-0 rounded-full bg-soft-pink/80 px-2.5 py-0.5 text-sm font-semibold text-ink">
-                    {item.price}
-                  </span>
-                </div>
+                <h3 className="font-[family-name:var(--font-display)] text-xl font-semibold text-ink">
+                  {item.name}
+                </h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">
                   {item.desc}
                 </p>
@@ -90,16 +85,16 @@ export default function MenuSection() {
             />
             <div>
               <p className="font-[family-name:var(--font-display)] text-xl font-semibold text-ink">
-                Sweet &amp; savory crepe bars
+                Full crepe bar setups
               </p>
               <p className="text-sm text-ink-soft">
-                Full cart setups for showers, weddings, grads &amp; corporate
-                events.
+                Sweet menus, savory options with organic ingredients, and
+                custom cart branding for themed parties.
               </p>
             </div>
           </div>
-          <a href="#visit" className="btn-rose shrink-0 text-sm">
-            Inquire Now
+          <a href="#book" className="btn-rose shrink-0 text-sm">
+            Request a Quote
           </a>
         </div>
       </div>

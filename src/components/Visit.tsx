@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Visit() {
   return (
-    <section id="visit" className="relative scroll-mt-24 py-16 md:py-24">
+    <section id="book" className="relative scroll-mt-24 py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-soft-pink via-blush to-rose/80 px-6 py-12 shadow-xl shadow-rose/20 md:px-14 md:py-16">
           <Image
@@ -32,12 +32,12 @@ export default function Visit() {
                 Book the cart
               </p>
               <h2 className="font-[family-name:var(--font-display)] text-4xl font-semibold tracking-wide text-ink md:text-5xl">
-                Bring Crepe L&apos;Amour to your event
+                Let&apos;s plan your crepe bar
               </h2>
               <p className="mt-4 max-w-md leading-relaxed text-ink/80">
-                Tell us about your celebration — date, guest count, and vibe —
-                and we&apos;ll plan a sweet (or savory) crepe experience
-                guests will remember.
+                Share your date, guest count, and vibe — sweet, savory, or both
+                — and we&apos;ll put together a cart experience guests actually
+                line up for.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
@@ -46,7 +46,7 @@ export default function Visit() {
                   rel="noopener noreferrer"
                   className="btn-rose !bg-ink !shadow-ink/20"
                 >
-                  Message on Instagram
+                  Message @crepe_lamour
                 </a>
                 <a
                   href="#gallery"
@@ -70,29 +70,33 @@ export default function Visit() {
               <dl className="space-y-5 text-sm">
                 <div>
                   <dt className="text-xs font-semibold tracking-[0.2em] uppercase text-deep-rose">
-                    Perfect for
+                    Booked for
                   </dt>
                   <dd className="mt-1 text-ink">
-                    Weddings · Baby showers · Birthdays
+                    Weddings · Baby &amp; bridal showers
                     <br />
-                    Quinceañeras · Grad parties · Corporate
+                    Birthdays · Quinceañeras · Grad parties
+                    <br />
+                    Corporate · Brand activations · TV sets
                   </dd>
                 </div>
                 <div>
                   <dt className="text-xs font-semibold tracking-[0.2em] uppercase text-deep-rose">
-                    What we bring
+                    What you get
                   </dt>
                   <dd className="mt-1 text-ink">
-                    Full crepe cart setup
+                    Full crepe cart + toppings bar
                     <br />
-                    Sweet &amp; savory menus
+                    Made-to-order sweet &amp; savory
                     <br />
                     Mini buttermilk pancakes
+                    <br />
+                    Optional custom cart wrap
                   </dd>
                 </div>
                 <div>
                   <dt className="text-xs font-semibold tracking-[0.2em] uppercase text-deep-rose">
-                    Find us
+                    Reach us
                   </dt>
                   <dd className="mt-1 text-ink">
                     <a
