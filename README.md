@@ -1,6 +1,6 @@
 # Crepe L'Amour
 
-A coquette-pink Next.js café site for **Crepe L'Amour** — soft crepes, satin bows, and princess treats.
+Coquette-pink Next.js site for **Crepe L'Amour** — mobile crêpe catering across Southern California.
 
 ## Stack
 
@@ -8,7 +8,7 @@ A coquette-pink Next.js café site for **Crepe L'Amour** — soft crepes, satin 
 - **React 19** + TypeScript
 - **Tailwind CSS 4**
 - Google fonts: Cormorant Garamond, DM Sans, Great Vibes
-- Photorealistic product images (satin bows + desserts) under `public/images/`
+- Real brand assets under `public/` (logos, event photos, Instagram content)
 
 ## Develop
 
@@ -19,6 +19,8 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+Optional: copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_SITE_URL` to your production origin (used for canonicals, Open Graph, sitemap, and robots).
+
 ## Build
 
 ```bash
@@ -26,10 +28,16 @@ npm run build
 npm start
 ```
 
-## Sections
+## Pages
 
-- **Hero** — brand lockup, floating bows, CTA
-- **Menu** — signature crepe, strawberry stack, heart cake
-- **Gallery** — polaroid scrapbook layout
-- **About** — story + amenity chips
-- **Visit** — hours, location, contact CTA
+- **`/`** — Hero, clients, menu, gallery, about, book
+- **`/crepes`** — Sweet & savory crepe catering (+ dietary)
+- **`/minis`** — Hello Kitty minis & buttermilk stacks
+- **`/dubai-chocolate`** — Dubai chocolate minis, crepes, strawberries
+
+## SEO
+
+- Metadata + Open Graph per page (`src/app/layout.tsx`, page files)
+- `src/app/sitemap.ts` → `/sitemap.xml`
+- `src/app/robots.ts` → `/robots.txt`
+- JSON-LD LocalBusiness / Service / BreadcrumbList (`src/lib/structured-data.ts`)

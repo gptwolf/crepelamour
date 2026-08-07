@@ -5,6 +5,7 @@ type Shot =
       type?: "image";
       src: string;
       caption: string;
+      alt: string;
       rotate: string;
     }
   | {
@@ -12,6 +13,7 @@ type Shot =
       src: string;
       poster: string;
       caption: string;
+      alt: string;
       rotate: string;
     };
 
@@ -19,21 +21,25 @@ const shots: Shot[] = [
   {
     src: "/images/instagram/hello-kitty-full-spread.png",
     caption: "Hello Kitty minis",
+    alt: "Hello Kitty mini pancakes dessert spread at a kids party",
     rotate: "-rotate-3",
   },
   {
     src: "/images/instagram/poolside-crepe-bowl.png",
     caption: "poolside minis",
+    alt: "Poolside mini pancakes with toppings from Crepe L'Amour",
     rotate: "rotate-2",
   },
   {
     src: "/images/instagram/handheld-strawberry-banana-crepe.png",
     caption: "strawberry banana crepe",
+    alt: "Handheld strawberry banana crepe made to order",
     rotate: "-rotate-1",
   },
   {
     src: "/images/instagram/wedding-crepe-cart.png",
     caption: "wedding cart",
+    alt: "Crepe L'Amour wedding crepe cart catering setup",
     rotate: "rotate-3",
   },
   {
@@ -41,31 +47,37 @@ const shots: Shot[] = [
     src: "/videos/instagram/chuyin-album-release.mp4",
     poster: "/images/instagram/chuyin-album-release.jpg",
     caption: "Chuyin album release",
+    alt: "Crepe cart at Chuyin album release event",
     rotate: "-rotate-2",
   },
   {
     src: "/images/instagram/bridal-mini-pancakes.png",
     caption: "bridal shower",
+    alt: "Mini pancakes at a bridal shower catering event",
     rotate: "-rotate-2",
   },
   {
     src: "/images/instagram/hello-kitty-full-spread.png",
     caption: "full sweet spread",
+    alt: "Full sweet mini pancake and crepe spread for an event",
     rotate: "rotate-1",
   },
   {
     src: "/images/instagram/christening-cart-setup.png",
     caption: "christening setup",
+    alt: "Crepe cart styled for a christening celebration",
     rotate: "rotate-2",
   },
   {
     src: "/images/instagram/ballerina-robin-cart.png",
     caption: "birthday cart",
+    alt: "Custom birthday crepe cart with ballerina theme",
     rotate: "-rotate-3",
   },
   {
     src: "/images/instagram/babyjurdi-balloon-cart.png",
     caption: "baby shower",
+    alt: "Baby shower crepe cart with balloon backdrop",
     rotate: "rotate-1",
   },
 ];
@@ -87,8 +99,8 @@ export default function Gallery() {
             Real celebrations
           </h2>
           <p className="mx-auto mt-3 max-w-md text-ink-soft">
-            Baby showers, weddings, birthdays, and brand events — same cart,
-            new theme every time.
+            Baby showers, weddings, birthdays, and brand events across Southern
+            California — same crepe cart, new theme every time.
           </p>
         </div>
 
@@ -108,14 +120,14 @@ export default function Gallery() {
                     playsInline
                     preload="metadata"
                     poster={shot.poster}
-                    aria-label={shot.caption}
+                    aria-label={shot.alt}
                   >
                     <source src={shot.src} type="video/mp4" />
                   </video>
                 ) : (
                   <Image
                     src={shot.src}
-                    alt={shot.caption}
+                    alt={shot.alt}
                     fill
                     sizes="(max-width: 768px) 45vw, 260px"
                     className="object-cover"

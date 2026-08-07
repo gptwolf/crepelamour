@@ -7,6 +7,7 @@ const menu = [
     desc: "Hand-folded and made to order — Nutella, chocolate drizzle, fresh fruit, whipped cream, and toppings your guests actually want.",
     tag: "Signature",
     image: "/images/instagram/handheld-strawberry-banana-crepe.png",
+    alt: "Made-to-order strawberry banana sweet crepe from the Crepe L'Amour cart",
     href: "/crepes#sweet",
   },
   {
@@ -14,6 +15,7 @@ const menu = [
     desc: "Brunch-ready and made to order with organic ingredients — chicken, spinach, pesto, tomato, mushrooms, and more.",
     tag: "Savory",
     image: "/images/instagram/savory-crepe-prep.jpg",
+    alt: "Savory crepe being prepared on the griddle at a catering event",
     href: "/crepes#savory",
   },
   {
@@ -21,6 +23,7 @@ const menu = [
     desc: "Viral mini buttermilk pancakes shaped like Hello Kitty — Nutella, fresh strawberries, bananas & powdered sugar.",
     tag: "Best Seller",
     image: "/images/instagram/hello-kitty-full-spread.png",
+    alt: "Hello Kitty shaped mini pancakes with fruit and toppings for parties",
     href: "/minis#hello-kitty",
   },
   {
@@ -28,6 +31,7 @@ const menu = [
     desc: "Tiny stacks of happiness — soft, fluffy minis with ice cream, berries, crumble, and whatever toppings fit the party.",
     tag: "Crowd Fave",
     image: "/images/instagram/poolside-crepe-bowl.png",
+    alt: "Mini buttermilk pancake bowl with toppings at a poolside event",
     href: "/minis#buttermilk",
   },
   {
@@ -35,6 +39,7 @@ const menu = [
     desc: "Mini buttermilk pancakes loaded with pistachio kataifi, chocolate drizzle, ice cream, and fresh berries.",
     tag: "Viral",
     image: "/images/instagram/dubai-chocolate-mini-pancakes.jpg",
+    alt: "Dubai chocolate mini pancakes with pistachio kataifi and berries",
     href: "/dubai-chocolate#minis",
   },
   {
@@ -42,6 +47,7 @@ const menu = [
     desc: "The viral one — pistachio kataifi filling, chocolate drizzle, and that crunch everyone asks for by name.",
     tag: "Specialty",
     image: "/images/instagram/archive/viral-dubai-chocolate-crepe.jpg",
+    alt: "Viral Dubai chocolate crepe with pistachio crunch filling",
     href: "/dubai-chocolate#crepe",
   },
   {
@@ -49,6 +55,7 @@ const menu = [
     desc: "Chocolate-dipped strawberries finished with pistachio crunch — cups for markets, full catering trays for events.",
     tag: "Specialty",
     image: "/images/instagram/archive2/dubai-chocolate-strawberries-cup.jpg",
+    alt: "Chocolate-dipped Dubai strawberries with pistachio in a cup",
     href: "/dubai-chocolate#strawberries",
   },
 ];
@@ -58,18 +65,21 @@ const dietary = [
     name: "Keto crepes",
     desc: "Keto-friendly batter so more of the guest list can join the line.",
     image: "/images/instagram/archive3/keto-friendly-crepes.jpg",
+    alt: "Keto-friendly crepes available for Crepe L'Amour catering",
     href: "/crepes#dietary",
   },
   {
     name: "Gluten-free crepes",
     desc: "Made to order GF crepes — same cart experience, different batter.",
     image: "/images/instagram/archive3/gluten-free-crepes.jpg",
+    alt: "Gluten-free crepes made to order on the mobile cart",
     href: "/crepes#dietary",
   },
   {
     name: "Vegan crepes",
     desc: "Plant-based options available for catering — ask when you book.",
     image: "/images/instagram/archive3/keto-crepes-obsessed.jpg",
+    alt: "Vegan crepe catering option from Crepe L'Amour",
     href: "/crepes#dietary",
   },
 ];
@@ -89,9 +99,9 @@ export default function MenuSection() {
             Sweet, savory &amp; more
           </h2>
           <p className="mx-auto mt-3 max-w-lg text-ink-soft">
-            Everything is made to order at your event — classic crepes, viral
-            Dubai chocolate, mini pancakes, and options for more of your guest
-            list. Tap a card for photos &amp; details.
+            Our crepe catering menu is made to order at your event — classic
+            crepes, viral Dubai chocolate, mini pancakes, and dietary options
+            for more of your guest list. Tap a card for photos &amp; details.
           </p>
         </div>
 
@@ -106,7 +116,7 @@ export default function MenuSection() {
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={item.image}
-                    alt={item.name}
+                    alt={item.alt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition duration-500 group-hover:scale-105"
@@ -157,7 +167,7 @@ export default function MenuSection() {
                   <div className="relative aspect-[5/3] overflow-hidden">
                     <Image
                       src={item.image}
-                      alt={item.name}
+                      alt={item.alt}
                       fill
                       sizes="(max-width: 640px) 100vw, 33vw"
                       className="object-cover transition duration-500 group-hover:scale-105"
