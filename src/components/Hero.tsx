@@ -51,32 +51,34 @@ export default function Hero() {
             height={20}
             className="h-5 w-5 rounded-full object-cover"
           />
-          Princess Treats Café
+          Premium Crêpe Catering
         </div>
 
         <div className="fade-up fade-up-delay-1 relative">
-          {/* Soft heart glow behind logo */}
           <div
             aria-hidden
-            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-[45%] rounded-[50%] bg-blush/80 blur-md"
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-blush/80 blur-md"
             style={{
-              width: "min(280px, 70vw)",
-              height: "min(200px, 48vw)",
+              width: "min(320px, 78vw)",
+              height: "min(320px, 78vw)",
               background:
-                "radial-gradient(circle at 50% 40%, #fadadd 0%, #f8c8dc 55%, transparent 100%)",
+                "radial-gradient(circle at 50% 45%, #fadadd 0%, #f8c8dc 50%, transparent 100%)",
             }}
           />
-          <h1 className="font-[family-name:var(--font-display)] text-6xl font-semibold tracking-[0.14em] text-ink sm:text-7xl md:text-8xl">
-            CREPE
-          </h1>
-          <p className="mt-1 font-[family-name:var(--font-display)] text-lg font-medium tracking-[0.45em] text-deep-rose sm:text-xl md:text-2xl">
-            L&apos;AMOUR
-          </p>
+          <Image
+            src="/logo/logo.png"
+            alt="Crepe L'Amour"
+            width={420}
+            height={420}
+            className="relative mx-auto w-48 object-contain drop-shadow-xl sm:w-56 md:w-72"
+            priority
+          />
         </div>
 
         <p className="fade-up fade-up-delay-2 mx-auto mt-6 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
-          Soft crepes, satin bows, and strawberry daydreams. A coquette café
-          where every plate feels like a love letter.
+          Soft crepes, satin bows, and strawberry daydreams. Made-to-order
+          crêpes &amp; mini pancakes for weddings, baby showers, and every
+          sweet celebration.
         </p>
 
         <div className="fade-up fade-up-delay-3 mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -84,21 +86,23 @@ export default function Hero() {
             Explore the Menu
           </a>
           <a href="#gallery" className="btn-outline-rose">
-            See the Gallery
+            See Real Events
           </a>
         </div>
 
-        {/* Hero product bow */}
-        <div className="fade-up fade-up-delay-3 relative mt-12 md:mt-16">
-          <div className="absolute -inset-6 rounded-full bg-blush/40 blur-2xl" />
-          <Image
-            src="/images/bow-hero.png"
-            alt="Blush pink satin ribbon bow"
-            width={420}
-            height={420}
-            className="relative mx-auto w-56 object-contain drop-shadow-xl md:w-72"
-            priority
-          />
+        {/* Hero cart photo */}
+        <div className="fade-up fade-up-delay-3 relative mt-12 w-full max-w-3xl md:mt-16">
+          <div className="absolute -inset-4 rounded-[2rem] bg-blush/40 blur-2xl" />
+          <div className="relative overflow-hidden rounded-[1.75rem] shadow-xl shadow-rose/20 ring-4 ring-white">
+            <Image
+              src="/images/IMG_6293.jpg"
+              alt="Crepe L'Amour cart with pink striped umbrella"
+              width={1200}
+              height={900}
+              className="h-auto w-full object-cover"
+              priority
+            />
+          </div>
           <p className="mt-4 font-[family-name:var(--font-script)] text-2xl text-deep-rose">
             tied with love
           </p>

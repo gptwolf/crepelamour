@@ -29,61 +29,82 @@ export default function Visit() {
           <div className="relative grid gap-10 md:grid-cols-2 md:items-center">
             <div>
               <p className="mb-2 text-xs font-semibold tracking-[0.28em] uppercase text-ink/70">
-                Come say hi
+                Book the cart
               </p>
               <h2 className="font-[family-name:var(--font-display)] text-4xl font-semibold tracking-wide text-ink md:text-5xl">
-                Visit Crepe L&apos;Amour
+                Bring Crepe L&apos;Amour to your event
               </h2>
               <p className="mt-4 max-w-md leading-relaxed text-ink/80">
-                Pop in for a polaroid moment, a warm crepe, and a little pink
-                magic. Walk-ins welcome — reservations recommended for
-                weekends.
+                Tell us about your celebration — date, guest count, and vibe —
+                and we&apos;ll plan a sweet (or savory) crepe experience
+                guests will remember.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="mailto:hello@crepelamour.cafe" className="btn-rose !bg-ink !shadow-ink/20">
-                  Email Us
+                <a
+                  href="https://www.instagram.com/crepe_lamour/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-rose !bg-ink !shadow-ink/20"
+                >
+                  Message on Instagram
                 </a>
                 <a
-                  href="#menu"
+                  href="#gallery"
                   className="btn-outline-rose !border-ink/30 !bg-white/40"
                 >
-                  Back to Menu
+                  Browse Events
                 </a>
               </div>
             </div>
 
             <div className="rounded-3xl bg-white/80 p-6 shadow-lg backdrop-blur-sm ring-1 ring-white md:p-8">
+              <div className="mb-5 flex justify-center">
+                <Image
+                  src="/logo/logo.png"
+                  alt="Crepe L'Amour"
+                  width={96}
+                  height={96}
+                  className="h-20 w-20 object-contain"
+                />
+              </div>
               <dl className="space-y-5 text-sm">
                 <div>
                   <dt className="text-xs font-semibold tracking-[0.2em] uppercase text-deep-rose">
-                    Hours
+                    Perfect for
                   </dt>
                   <dd className="mt-1 text-ink">
-                    Tue–Thu 10am–7pm
+                    Weddings · Baby showers · Birthdays
                     <br />
-                    Fri–Sun 9am–9pm
-                    <br />
-                    Closed Mondays
+                    Quinceañeras · Grad parties · Corporate
                   </dd>
                 </div>
                 <div>
                   <dt className="text-xs font-semibold tracking-[0.2em] uppercase text-deep-rose">
-                    Location
+                    What we bring
                   </dt>
                   <dd className="mt-1 text-ink">
-                    12 Blush Lane
+                    Full crepe cart setup
                     <br />
-                    Sweetheart District
+                    Sweet &amp; savory menus
+                    <br />
+                    Mini buttermilk pancakes
                   </dd>
                 </div>
                 <div>
                   <dt className="text-xs font-semibold tracking-[0.2em] uppercase text-deep-rose">
-                    Contact
+                    Find us
                   </dt>
                   <dd className="mt-1 text-ink">
-                    hello@crepelamour.cafe
+                    <a
+                      href="https://www.instagram.com/crepe_lamour/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-rose/40 underline-offset-2 hover:text-deep-rose"
+                    >
+                      @crepe_lamour
+                    </a>
                     <br />
-                    @crepelamour
+                    Southern California
                   </dd>
                 </div>
               </dl>

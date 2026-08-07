@@ -2,25 +2,25 @@ import Image from "next/image";
 
 const menu = [
   {
-    name: "Choco L'Amour Crepe",
-    desc: "Warm folded crepe, chocolate drizzle, vanilla soft serve & powdered sugar.",
-    price: "$12",
-    tag: "Signature",
-    image: "/images/crepe-chocolate.jpg",
-  },
-  {
-    name: "Strawberry Princess Stack",
-    desc: "Mini golden pancakes, fresh strawberries, whipped cream & ice cream.",
-    price: "$14",
+    name: "Hello Kitty Minis",
+    desc: "Fluffy Hello Kitty mini pancakes with Nutella, fresh strawberries, bananas & powdered sugar.",
+    price: "Catering",
     tag: "Best Seller",
-    image: "/images/strawberry-pancakes.jpg",
+    image: "/images/instagram/hello-kitty-mini-pancakes.png",
   },
   {
-    name: "Heart Cake Slice",
-    desc: "Pastel pink buttercream heart cake with dainty satin bows.",
-    price: "$9",
-    tag: "Sweetest",
-    image: "/images/heart-cake.jpg",
+    name: "Strawberry Banana Crepe",
+    desc: "Hand-folded crepe with chocolate drizzle, banana, berries, whipped cream & a pretty finish.",
+    price: "Catering",
+    tag: "Signature",
+    image: "/images/instagram/handheld-strawberry-banana-crepe.png",
+  },
+  {
+    name: "Poolside Mini Stack",
+    desc: "Golden buttermilk minis, ice cream, fresh berries & crumble — made for sunny celebrations.",
+    price: "Catering",
+    tag: "Crowd Fave",
+    image: "/images/instagram/poolside-crepe-bowl.png",
   },
 ];
 
@@ -36,11 +36,11 @@ export default function MenuSection() {
             The Menu
           </p>
           <h2 className="font-[family-name:var(--font-display)] text-4xl font-semibold tracking-wide text-ink md:text-5xl">
-            Princess Treats
+            Sweet &amp; Savory
           </h2>
           <p className="mx-auto mt-3 max-w-md text-ink-soft">
-            Hand-folded crepes and pretty plates — each one finished with a
-            little extra love.
+            Made-to-order crepes and mini buttermilk pancakes for your event —
+            sweet, savory, and always pretty.
           </p>
         </div>
 
@@ -82,23 +82,24 @@ export default function MenuSection() {
         <div className="mt-12 flex flex-col items-center gap-4 rounded-3xl border border-dashed border-rose/40 bg-white/50 px-6 py-8 text-center backdrop-blur-sm md:flex-row md:justify-between md:text-left">
           <div className="flex items-center gap-4">
             <Image
-              src="/images/bow-silk.png"
-              alt=""
+              src="/images/instagram/savory-crepe-menu-display.png"
+              alt="Savory crepe bar display"
               width={64}
               height={64}
               className="h-14 w-14 rounded-2xl object-cover ring-2 ring-white shadow"
             />
             <div>
               <p className="font-[family-name:var(--font-display)] text-xl font-semibold text-ink">
-                Seasonal ribbon specials
+                Sweet &amp; savory crepe bars
               </p>
               <p className="text-sm text-ink-soft">
-                Ask about our monthly bow-themed dessert collabs.
+                Full cart setups for showers, weddings, grads &amp; corporate
+                events.
               </p>
             </div>
           </div>
           <a href="#visit" className="btn-rose shrink-0 text-sm">
-            Reserve a Table
+            Inquire Now
           </a>
         </div>
       </div>

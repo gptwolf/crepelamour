@@ -7,11 +7,11 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-5 text-center md:px-8">
         <div className="flex items-center gap-3">
           <Image
-            src="/images/bow-small.png"
-            alt=""
-            width={36}
-            height={36}
-            className="h-9 w-9 rounded-full object-cover ring-2 ring-blush"
+            src="/logo/logo.png"
+            alt="Crepe L'Amour"
+            width={44}
+            height={44}
+            className="h-11 w-11 object-contain"
           />
           <span className="font-[family-name:var(--font-display)] text-xl font-semibold tracking-[0.14em] text-ink">
             CREPE L&apos;AMOUR
@@ -33,10 +33,18 @@ export default function Footer() {
           <a href="#visit" className="hover:text-deep-rose">
             Visit
           </a>
+          <a
+            href="https://www.instagram.com/crepe_lamour/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-deep-rose"
+          >
+            Instagram
+          </a>
         </nav>
         <p className="text-xs text-ink-soft/80">
-          © {new Date().getFullYear()} Crepe L&apos;Amour · Princess Treats
-          Café
+          © {new Date().getFullYear()} Crepe L&apos;Amour · Premium Crêpe
+          Catering
         </p>
         <Link
           href="#"

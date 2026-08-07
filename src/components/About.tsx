@@ -9,33 +9,33 @@ export default function About() {
           <div className="absolute -bottom-6 -right-4 h-28 w-28 rounded-full bg-rose/30 blur-xl" />
           <div className="relative grid grid-cols-2 gap-3">
             <Image
-              src="/images/bow-hero.png"
-              alt="Pink satin bow"
+              src="/images/IMG_6293.jpg"
+              alt="Crepe L'Amour cart under pink umbrella"
               width={280}
               height={320}
-              className="h-48 w-full rounded-3xl object-contain bg-white/40 p-3 shadow-lg ring-4 ring-white md:h-64"
+              className="h-48 w-full rounded-3xl object-cover shadow-lg ring-4 ring-white md:h-64"
             />
             <Image
-              src="/images/heart-cake.jpg"
-              alt="Heart shaped pink cake"
+              src="/images/IMG_8498.jpg"
+              alt="Crepe bar next to giant pink bow flower wall"
               width={280}
               height={320}
               className="mt-8 h-48 w-full rounded-3xl object-cover shadow-lg ring-4 ring-white md:h-64"
             />
             <Image
-              src="/images/crepe-chocolate.jpg"
-              alt="Chocolate crepe dessert"
+              src="/images/instagram/wedding-crepe-cart.png"
+              alt="Wedding crepe cart setup"
               width={280}
               height={200}
               className="col-span-2 h-40 w-full rounded-3xl object-cover shadow-lg ring-4 ring-white md:h-48"
             />
           </div>
           <Image
-            src="/images/bow-small.png"
+            src="/logo/logo.png"
             alt=""
             width={80}
             height={80}
-            className="absolute -right-2 top-1/3 w-16 rotate-12 rounded-full object-cover shadow-md ring-2 ring-white md:w-20"
+            className="absolute -right-2 top-1/3 w-16 drop-shadow-md md:w-20"
           />
         </div>
 
@@ -51,24 +51,24 @@ export default function About() {
             </span>
           </h2>
           <p className="mt-5 leading-relaxed text-ink-soft">
-            Crepe L&apos;Amour started as a tiny love letter to coquette
-            aesthetics — blush tones, glitter stars, and crepes that look as
-            pretty as they taste. We fold every batter thin, pile on the
-            strawberries, and finish plates with satin bows because dessert
-            should feel like a celebration.
+            Crepe L&apos;Amour brings a pretty little crêperie to your event —
+            blush carts, striped umbrellas, and made-to-order crepes that look
+            as lovely as they taste. From Hello Kitty minis to savory bars, we
+            fold every batter thin and finish each plate with a little extra
+            love.
           </p>
           <p className="mt-4 leading-relaxed text-ink-soft">
-            Whether you&apos;re celebrating an anniversary or just treating
-            yourself on a Tuesday, you&apos;re invited into our pink little
-            world of princess treats.
+            Whether it&apos;s a wedding, baby shower, quince, grad party, or
+            corporate celebration, we roll up with a full cart setup so your
+            guests get a polaroid-worthy moment and a warm bite.
           </p>
 
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {[
-              "Handmade crepes daily",
-              "Real satin bow décor",
-              "Seasonal heart cakes",
-              "Soft café seating",
+              "Made-to-order crepes",
+              "Mini buttermilk pancakes",
+              "Full cart & décor setups",
+              "Weddings · showers · events",
             ].map((item) => (
               <li
                 key={item}

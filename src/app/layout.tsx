@@ -21,13 +21,30 @@ const script = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: "Crepe L'Amour — Princess Treats & Soft Crepes",
+  title: "Crepe L'Amour — Premium Crêpe Catering",
   description:
-    "A coquette pink café serving dreamy crepes, strawberry stacks, and heart cakes. Made with love — Crepe L'Amour.",
+    "Premium crêpe catering for events — sweet & savory crepes, mini buttermilk pancakes, and princess-pretty setups for weddings, baby showers, and more.",
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico", sizes: "any" },
+      { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/favicon/site.webmanifest",
   openGraph: {
     title: "Crepe L'Amour",
-    description: "Princess treats, soft crepes, and satin-bow vibes.",
+    description:
+      "Premium crêpe catering — made-to-order crepes & mini pancakes for your sweetest events.",
     type: "website",
+    images: [{ url: "/logo/logo.png", width: 1024, height: 1024, alt: "Crepe L'Amour" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Crepe L'Amour",
+    description: "Premium crêpe catering for events.",
+    images: ["/logo/logo.png"],
   },
 };
 

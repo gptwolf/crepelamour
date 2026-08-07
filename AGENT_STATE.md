@@ -38,20 +38,18 @@ Build a polished Next.js app matching the Crepe L'Amour moodboard theme (soft pi
 - [x] Final AGENT_STATE update
 
 ## Current status
-**DONE** — app builds cleanly; themed homepage with generated bow + dessert assets.
+**DONE** — real brand assets integrated (logos, favicons, Instagram photos, event cart photos). Branch: `assets/real-brand-content`.
 
-## Asset map (`public/images/`)
-| File | Source |
+## Asset map
+| Path | Source |
 |------|--------|
-| `bow-hero.png` | Photoreal satin bow, **transparent bg** (rembg) |
-| `bow-silk.png` | Silk bow, transparent bg |
-| `bow-small.png` | Dainty bow, transparent bg |
-| `bow-elegant.png` | Elegant front-view bow, transparent bg |
-| `bow-*.jpg` | Original opaque sources (kept) |
-| `crepe-chocolate.jpg` | Generated chocolate crepe dessert |
-| `strawberry-pancakes.jpg` | Generated strawberry pancake tray |
-| `heart-cake.jpg` | Generated pink heart cake with bows |
-| `moodboard.jpg` | User theme reference JPEG |
+| `public/logo/logo.png` | Brand heart logo (light) |
+| `public/logo/logo-dark.png` | Brand heart logo (dark/magenta) |
+| `public/favicon/*` | Full favicon set + `site.webmanifest` |
+| `public/images/IMG_*.jpg` | Real cart / event photos |
+| `public/images/instagram/*` | Real Instagram content + archives + `posts.json` |
+| `public/videos/instagram/*` | Event reels / clips |
+| `public/images/bow-*.png` | Decorative satin bows (generated, kept for UI accents) |
 
 ## Run
 ```bash

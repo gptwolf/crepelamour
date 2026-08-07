@@ -33,11 +33,12 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 md:px-8">
         <Link href="#" className="group flex items-center gap-2.5">
           <Image
-            src="/images/bow-small.png"
-            alt=""
-            width={40}
-            height={40}
-            className="h-9 w-9 rounded-full object-cover ring-2 ring-blush shadow-sm"
+            src="/logo/logo.png"
+            alt="Crepe L'Amour"
+            width={48}
+            height={48}
+            className="h-10 w-10 object-contain drop-shadow-sm transition group-hover:scale-105 md:h-11 md:w-11"
+            priority
           />
           <span className="font-[family-name:var(--font-display)] text-xl font-semibold tracking-[0.12em] text-ink md:text-2xl">
             CREPE{" "}
@@ -58,7 +59,7 @@ export default function Header() {
             </a>
           ))}
           <a href="#visit" className="btn-rose !px-5 !py-2.5 text-sm">
-            Order Now
+            Book Us
           </a>
         </nav>
 
@@ -90,7 +91,7 @@ export default function Header() {
               onClick={() => setOpen(false)}
               className="btn-rose mt-1 text-center text-sm"
             >
-              Order Now
+              Book Us
             </a>
           </nav>
         </div>

@@ -2,33 +2,48 @@ import Image from "next/image";
 
 const shots = [
   {
-    src: "/images/strawberry-pancakes.jpg",
-    caption: "poolside princess",
+    src: "/images/instagram/hello-kitty-mini-pancakes.png",
+    caption: "hello kitty minis",
     rotate: "-rotate-3",
   },
   {
-    src: "/images/crepe-chocolate.jpg",
-    caption: "choco drizzle dream",
+    src: "/images/instagram/poolside-crepe-bowl.png",
+    caption: "poolside princess",
     rotate: "rotate-2",
   },
   {
-    src: "/images/bow-hero.png",
-    caption: "satin soft",
+    src: "/images/instagram/handheld-strawberry-banana-crepe.png",
+    caption: "strawberry banana",
     rotate: "-rotate-1",
   },
   {
-    src: "/images/heart-cake.jpg",
-    caption: "6th anniversary vibes",
+    src: "/images/instagram/wedding-crepe-cart.png",
+    caption: "wedding love story",
     rotate: "rotate-3",
   },
   {
-    src: "/images/bow-elegant.png",
-    caption: "tied just so",
+    src: "/images/instagram/bridal-mini-pancakes.png",
+    caption: "bridal bites",
     rotate: "-rotate-2",
   },
   {
-    src: "/images/bow-silk.png",
-    caption: "coquette details",
+    src: "/images/instagram/hello-kitty-full-spread.png",
+    caption: "full kitty spread",
+    rotate: "rotate-1",
+  },
+  {
+    src: "/images/instagram/christening-cart-setup.png",
+    caption: "christening setup",
+    rotate: "rotate-2",
+  },
+  {
+    src: "/images/instagram/ballerina-robin-cart.png",
+    caption: "ballerina cart",
+    rotate: "-rotate-3",
+  },
+  {
+    src: "/images/instagram/babyjurdi-balloon-cart.png",
+    caption: "oh boy balloons",
     rotate: "rotate-1",
   },
 ];
@@ -44,13 +59,14 @@ export default function Gallery() {
             ✦
           </span>
           <p className="mb-2 text-xs font-semibold tracking-[0.28em] uppercase text-deep-rose">
-            Polaroids
+            Real Events
           </p>
           <h2 className="font-[family-name:var(--font-display)] text-4xl font-semibold tracking-wide text-ink md:text-5xl">
             A Soft Scrapbook
           </h2>
           <p className="mx-auto mt-3 max-w-md text-ink-soft">
-            Little moments from the café — bows, bites, and blush everywhere.
+            Moments from real celebrations — crepe carts, mini stacks, and
+            blush everywhere.
           </p>
         </div>
 
