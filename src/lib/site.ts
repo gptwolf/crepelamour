@@ -16,11 +16,11 @@ export const siteConfig = {
   areaServed: "Southern California",
   /**
    * Primary share image for iMessage / iOS / Facebook / Twitter link previews.
-   * Brand mark on blush card (1200×630). Offering pages override with food photos.
+   * Event photo hero + brand mark corner (1200×630). Offering pages override with food photos.
    */
   ogImage: {
     url: "/logo/og-share.png",
-    alt: "Crepe L'Amour — mobile crêpe catering",
+    alt: "Crepe L'Amour crepe cart at an event — mobile crêpe catering",
     width: 1200,
     height: 630,
   },

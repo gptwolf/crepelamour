@@ -46,7 +46,7 @@ Build a polished Next.js app matching the Crepe L'Amour moodboard theme (soft pi
   - Favicons: `public/favicon/*` + `src/app/favicon.ico` (new mark)
   - Apple home screen: `apple-touch-icon.png` 180×180
   - PWA: `site.webmanifest` → 192/512 maskable icons
-  - Link previews (iMessage/OG/Twitter): `public/logo/og-share.png` 1200×630 brand card via `siteConfig.ogImage`
+  - Link previews (iMessage/OG/Twitter): `public/logo/og-share.png` 1200×630 — event photo + logo corner badge
   - Offering pages still use food photos for OG (crepes/minis/dubai)
 - **Not using:** freehand pure-vector recreation (abandoned — use exact artwork instead)
 - **UI sizes:** header `h-12`/`md:h-14` w-auto; footer/visit larger wordmark
