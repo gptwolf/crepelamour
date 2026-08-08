@@ -52,9 +52,17 @@ export const metadata: Metadata = {
       { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
       { url: "/favicon/favicon.svg", type: "image/svg+xml" },
     ],
-    apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
+    apple: [
+      { url: "/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: ["/favicon/favicon.ico"],
   },
   manifest: "/favicon/site.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: siteConfig.shortName,
+    statusBarStyle: "default",
+  },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
@@ -69,6 +77,7 @@ export const metadata: Metadata = {
         width: siteConfig.ogImage.width,
         height: siteConfig.ogImage.height,
         alt: siteConfig.ogImage.alt,
+        type: "image/png",
       },
     ],
   },

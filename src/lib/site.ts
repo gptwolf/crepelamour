@@ -14,10 +14,13 @@ export const siteConfig = {
   instagram: "https://www.instagram.com/crepe_lamour/",
   instagramHandle: "@crepe_lamour",
   areaServed: "Southern California",
-  /** Primary share image (food/cart — not logo) */
+  /**
+   * Primary share image for iMessage / iOS / Facebook / Twitter link previews.
+   * Brand mark on blush card (1200×630). Offering pages override with food photos.
+   */
   ogImage: {
-    url: "/images/instagram/wedding-crepe-cart.png",
-    alt: "Crepe L'Amour wedding crepe cart setup",
+    url: "/logo/og-share.png",
+    alt: "Crepe L'Amour — mobile crêpe catering",
     width: 1200,
     height: 630,
   },
