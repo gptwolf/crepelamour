@@ -37,9 +37,9 @@ export default function Header() {
           <Image
             src="/logo/logo.svg"
             alt="Crepe L'Amour"
-            width={200}
-            height={112}
-            className="h-10 w-auto object-contain drop-shadow-sm transition group-hover:scale-[1.03] md:h-12"
+            width={160}
+            height={160}
+            className="h-11 w-11 object-contain drop-shadow-sm transition group-hover:scale-[1.03] md:h-12 md:w-12"
             priority
             unoptimized
           />
