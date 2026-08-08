@@ -8,9 +8,9 @@ export default function Footer() {
         <Image
           src="/logo/logo.svg"
           alt="Crepe L'Amour"
-          width={160}
-          height={160}
-          className="h-16 w-16 object-contain"
+          width={260}
+          height={163}
+          className="h-20 w-auto object-contain md:h-24"
           unoptimized
         />
         <p className="w-full text-center font-[family-name:var(--font-script)] text-2xl text-deep-rose">

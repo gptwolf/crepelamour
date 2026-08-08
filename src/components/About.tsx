@@ -33,9 +33,9 @@ export default function About() {
           <Image
             src="/logo/logo.svg"
             alt=""
-            width={160}
-            height={160}
-            className="absolute -right-2 top-1/3 h-16 w-16 drop-shadow-md md:h-20 md:w-20"
+            width={200}
+            height={126}
+            className="absolute -right-2 top-1/3 h-20 w-auto drop-shadow-md md:h-24"
             unoptimized
           />
         </div>

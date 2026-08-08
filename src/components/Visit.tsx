@@ -62,9 +62,9 @@ export default function Visit() {
                 <Image
                   src="/logo/logo.svg"
                   alt="Crepe L'Amour"
-                  width={160}
-                  height={160}
-                  className="h-20 w-20 object-contain md:h-24 md:w-24"
+                  width={280}
+                  height={176}
+                  className="h-24 w-auto object-contain md:h-28"
                   unoptimized
                 />
               </div>

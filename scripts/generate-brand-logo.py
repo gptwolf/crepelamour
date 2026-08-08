@@ -125,10 +125,21 @@ def build_svg() -> str:
     heart_cy = desired_tip - heart_h * 0.50
     heart_d = heart(cx, heart_cy, heart_w, heart_h)
 
+    # Tight viewBox around mark (avoid huge empty padding that makes logo look tiny)
+    content_top = heart_cy - heart_h * 0.55
+    content_bot = max(desired_tip, lamour_baseline + lamour_size * 0.15)
+    content_left = min(cx - crepe_w / 2, cx - heart_w / 2)
+    content_right = max(cx + crepe_w / 2, cx + heart_w / 2)
+    pad = 48
+    vb_x = content_left - pad
+    vb_y = content_top - pad
+    vb_w = (content_right - content_left) + 2 * pad
+    vb_h = (content_bot - content_top) + 2 * pad
+
     return f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {VW} {VH}" fill="none" role="img" aria-label="Crepe L'Amour">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb_x:.2f} {vb_y:.2f} {vb_w:.2f} {vb_h:.2f}" fill="none" role="img" aria-label="Crepe L'Amour">
   <title>Crepe L'Amour</title>
-  <!-- Pure vector paths only (no embedded PNG). Transparent background. -->
+  <!-- Pure vector paths only (no embedded PNG). Transparent background. Tight viewBox. -->
   <path d="{heart_d}" fill="{HEART}"/>
   <path d="{crepe_d}" fill="{CREPE_C}"/>
   <line x1="{rule_x0:.2f}" y1="{rule_y:.2f}" x2="{rule_x1:.2f}" y2="{rule_y:.2f}" stroke="{RULE_C}" stroke-width="3.2" stroke-linecap="square"/>

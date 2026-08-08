@@ -38,6 +38,10 @@ Build a polished Next.js app matching the Crepe L'Amour moodboard theme (soft pi
 ### Status
 **DONE** — pure vector logo on `feat/new-brand-logo` (PR #4).
 
+### Follow-up: logo size (2026-08-07)
+- **Problem:** viewBox was full 1400×1400 while mark only occupied ~center → looked tiny in UI.
+- **Fix:** tight viewBox around content (`~281 353 837 526`); larger header/footer/visit/about display sizes (`h-12`–`h-28`, `w-auto`).
+
 ### Asset targets
 | Path | Requirement |
 |------|-------------|
