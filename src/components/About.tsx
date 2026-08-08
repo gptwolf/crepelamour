@@ -31,11 +31,12 @@ export default function About() {
             />
           </div>
           <Image
-            src="/logo/logo.png"
+            src="/logo/logo.svg"
             alt=""
-            width={80}
-            height={80}
+            width={120}
+            height={120}
             className="absolute -right-2 top-1/3 w-16 drop-shadow-md md:w-20"
+            unoptimized
           />
         </div>
 

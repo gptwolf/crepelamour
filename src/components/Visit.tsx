@@ -60,11 +60,12 @@ export default function Visit() {
             <div className="rounded-3xl bg-white/80 p-6 shadow-lg backdrop-blur-sm ring-1 ring-white md:p-8">
               <div className="mb-5 flex justify-center">
                 <Image
-                  src="/logo/logo.png"
+                  src="/logo/logo.svg"
                   alt="Crepe L'Amour"
-                  width={96}
-                  height={96}
-                  className="h-20 w-20 object-contain"
+                  width={200}
+                  height={112}
+                  className="h-16 w-auto object-contain md:h-20"
+                  unoptimized
                 />
               </div>
               <dl className="space-y-5 text-sm">

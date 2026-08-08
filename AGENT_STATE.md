@@ -43,9 +43,10 @@ Build a polished Next.js app matching the Crepe L'Amour moodboard theme (soft pi
 ## Asset map
 | Path | Source |
 |------|--------|
-| `public/logo/logo.png` | Brand heart logo (light) |
-| `public/logo/logo-dark.png` | Brand heart logo (dark/magenta) |
-| `public/favicon/*` | Full favicon set + `site.webmanifest` |
+| `public/logo/logo.svg` | Brand wordmark (vector, transparent bg) — CREPE + heart + L'AMOUR |
+| `public/logo/logo.png` | Same mark, 1024² PNG transparent (SEO / structured data) |
+| `public/logo/logo-dark.png` | Same transparent mark (works on dark backgrounds) |
+| `public/favicon/*` | Full favicon set (SVG + PNG + ICO) + `site.webmanifest` |
 | `public/images/IMG_*.jpg` | Real cart / event photos |
 | `public/images/instagram/*` | Real Instagram content + archives + `posts.json` |
 | `public/videos/instagram/*` | Event reels / clips |

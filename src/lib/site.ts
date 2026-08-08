@@ -21,6 +21,7 @@ export const siteConfig = {
     width: 1200,
     height: 630,
   },
+  /** Raster logo for structured data / crawlers; SVG also at /logo/logo.svg */
   logo: "/logo/logo.png",
 } as const;
 
