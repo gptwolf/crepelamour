@@ -33,21 +33,16 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 md:px-8">
-        <Link href="/" className="group flex items-center gap-2.5">
+        <Link href="/" className="group flex items-center" aria-label="Crepe L'Amour home">
           <Image
-            src="/logo/logo.png"
+            src="/logo/logo.svg"
             alt="Crepe L'Amour"
-            width={48}
-            height={48}
-            className="h-10 w-10 object-contain drop-shadow-sm transition group-hover:scale-105 md:h-11 md:w-11"
+            width={220}
+            height={138}
+            className="h-12 w-auto object-contain drop-shadow-sm transition group-hover:scale-[1.03] md:h-14"
             priority
+            unoptimized
           />
-          <span className="font-[family-name:var(--font-display)] text-xl font-semibold tracking-[0.12em] text-ink md:text-2xl">
-            CREPE{" "}
-            <span className="text-deep-rose tracking-[0.18em] text-sm md:text-base font-medium">
-              L&apos;AMOUR
-            </span>
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-5 lg:gap-6 lg:flex">

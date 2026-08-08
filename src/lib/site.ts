@@ -14,13 +14,17 @@ export const siteConfig = {
   instagram: "https://www.instagram.com/crepe_lamour/",
   instagramHandle: "@crepe_lamour",
   areaServed: "Southern California",
-  /** Primary share image (food/cart — not logo) */
+  /**
+   * Primary share image for iMessage / iOS / Facebook / Twitter link previews.
+   * Event photo hero + brand mark corner (1200×630). Offering pages override with food photos.
+   */
   ogImage: {
-    url: "/images/instagram/wedding-crepe-cart.png",
-    alt: "Crepe L'Amour wedding crepe cart setup",
+    url: "/logo/og-share.png",
+    alt: "Crepe L'Amour crepe cart at an event — mobile crêpe catering",
     width: 1200,
     height: 630,
   },
+  /** Raster logo for structured data / crawlers; SVG also at /logo/logo.svg */
   logo: "/logo/logo.png",
 } as const;
 

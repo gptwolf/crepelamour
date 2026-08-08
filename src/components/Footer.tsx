@@ -5,18 +5,14 @@ export default function Footer() {
   return (
     <footer className="border-t border-blush/60 bg-white/50 py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-5 text-center md:px-8">
-        <div className="flex items-center gap-3">
-          <Image
-            src="/logo/logo.png"
-            alt="Crepe L'Amour"
-            width={44}
-            height={44}
-            className="h-11 w-11 object-contain"
-          />
-          <span className="font-[family-name:var(--font-display)] text-xl font-semibold tracking-[0.14em] text-ink">
-            CREPE L&apos;AMOUR
-          </span>
-        </div>
+        <Image
+          src="/logo/logo.svg"
+          alt="Crepe L'Amour"
+          width={260}
+          height={163}
+          className="h-20 w-auto object-contain md:h-24"
+          unoptimized
+        />
         <p className="w-full text-center font-[family-name:var(--font-script)] text-2xl text-deep-rose">
           love in every bite
         </p>
