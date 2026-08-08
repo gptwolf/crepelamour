@@ -1,208 +1,143 @@
 #!/usr/bin/env python3
 """
-Generate pure-SVG Crepe L'Amour brand mark (vector paths only, transparent bg).
+Build brand logo/favicon assets from a source PNG with white paper background removed.
 
-Requires: fontTools, Pillow, rsvg-convert, ImageMagick (magick)
-Font: Playfair Display variable TTF (Google Fonts) at /tmp/logo-fonts/ or FONTS_DIR.
+Preserves pale pink heart (chroma-aware); only neutral near-white is made transparent.
 
 Usage:
-  python3 scripts/generate-brand-logo.py
+  python3 scripts/generate-brand-logo.py /path/to/logo-source.png
 """
 from __future__ import annotations
 
+import base64
+import io
 import subprocess
+import sys
 from pathlib import Path
 
-from fontTools.ttLib import TTFont
-from fontTools.pens.svgPathPen import SVGPathPen
-from fontTools.pens.transformPen import TransformPen
-from fontTools.varLib.instancer import instantiateVariableFont
+import numpy as np
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_LOGO = ROOT / "public" / "logo"
 OUT_FAV = ROOT / "public" / "favicon"
-FONT = Path("/tmp/logo-fonts/PlayfairDisplay[wght].ttf")
-if not FONT.exists():
-    FONT = Path("/tmp/logo-fonts/PlayfairDisplay.ttf")
-
-VW = VH = 1400
-HEART = "#F5C9DC"
-CREPE_C = "#1A1518"
-LAMOUR_C = "#D67A9E"
-RULE_C = "#1A1518"
 
 
-def load(weight: float) -> TTFont:
-    font = TTFont(str(FONT))
-    if "fvar" in font:
-        axes = {
-            a.axisTag: (weight if a.axisTag == "wght" else a.defaultValue)
-            for a in font["fvar"].axes
-        }
-        font = instantiateVariableFont(font, axes, inplace=False)
-    return font
+def remove_white_bg(im: Image.Image) -> Image.Image:
+    """Transparent paper bg; keep pink heart / ink (chroma-aware)."""
+    arr = np.array(im.convert("RGBA"))
+    r, g, b = (arr[:, :, i].astype(np.float32) for i in range(3))
+    mx = np.maximum(np.maximum(r, g), b)
+    mn = np.minimum(np.minimum(r, g), b)
+    chroma = mx - mn
+    light = (r + g + b) / 3.0
+    bg = (light >= 248) & (chroma <= 12)
+    near = (light >= 235) & (chroma <= 18) & ~bg
+    alpha = np.full(r.shape, 255, dtype=np.uint8)
+    alpha[bg] = 0
+    t = np.clip((light - 235) / 20.0, 0, 1)
+    fade = (255 * (1 - t * 0.95)).astype(np.uint8)
+    alpha = np.where(near, np.minimum(alpha, fade), alpha)
+    arr[:, :, 3] = alpha
+    arr[alpha == 0, 0:3] = 0
+    return Image.fromarray(arr)
 
 
-def text_path(font, text, size, x, yb, tracking=0.0):
-    units = font["head"].unitsPerEm
-    sc = size / units
-    gs, cmap, hmtx = font.getGlyphSet(), font.getBestCmap(), font["hmtx"]
-    parts = []
-    px = x
-    for ch in text:
-        name = cmap.get(ord(ch))
-        if not name and ch in ("'", "\u2019"):
-            name = cmap.get(ord("'")) or cmap.get(0x2019)
-        if not name:
-            raise KeyError(ch)
-        pen = SVGPathPen(gs)
-        gs[name].draw(TransformPen(pen, (sc, 0, 0, -sc, px, yb)))
-        parts.append(pen.getCommands())
-        px += hmtx[name][0] * sc + tracking
-    return " ".join(parts), px - x
+def tight_crop(im: Image.Image, pad: int = 12) -> Image.Image:
+    a = np.array(im)
+    ys, xs = np.where(a[:, :, 3] > 20)
+    x0 = max(0, int(xs.min()) - pad)
+    y0 = max(0, int(ys.min()) - pad)
+    x1 = min(im.width, int(xs.max()) + pad + 1)
+    y1 = min(im.height, int(ys.max()) + pad + 1)
+    return im.crop((x0, y0, x1, y1))
 
 
-def center(font, text, size, cx, yb, tracking=0.0):
-    _, w = text_path(font, text, size, 0, 0, tracking)
-    return text_path(font, text, size, cx - w / 2, yb, tracking)
+def to_square(im: Image.Image) -> Image.Image:
+    cw, ch = im.size
+    side = max(cw, ch)
+    sq = Image.new("RGBA", (side, side), (0, 0, 0, 0))
+    sq.paste(im, ((side - cw) // 2, (side - ch) // 2), im)
+    return sq
 
 
-def heart(cx, cy, w, h):
-    """Soft romantic heart (SVG y-down)."""
-    hw, hh = w / 2, h / 2
-    return (
-        f"M {cx:.2f} {cy - 0.20 * hh:.2f} "
-        f"C {cx + 0.12 * hw:.2f} {cy - 0.55 * hh:.2f}, "
-        f"{cx + 0.52 * hw:.2f} {cy - 0.75 * hh:.2f}, "
-        f"{cx + 0.80 * hw:.2f} {cy - 0.45 * hh:.2f} "
-        f"C {cx + 1.05 * hw:.2f} {cy - 0.12 * hh:.2f}, "
-        f"{cx + 0.85 * hw:.2f} {cy + 0.30 * hh:.2f}, "
-        f"{cx + 0.42 * hw:.2f} {cy + 0.65 * hh:.2f} "
-        f"C {cx + 0.20 * hw:.2f} {cy + 0.82 * hh:.2f}, "
-        f"{cx + 0.05 * hw:.2f} {cy + 0.93 * hh:.2f}, "
-        f"{cx:.2f} {cy + 1.00 * hh:.2f} "
-        f"C {cx - 0.05 * hw:.2f} {cy + 0.93 * hh:.2f}, "
-        f"{cx - 0.20 * hw:.2f} {cy + 0.82 * hh:.2f}, "
-        f"{cx - 0.42 * hw:.2f} {cy + 0.65 * hh:.2f} "
-        f"C {cx - 0.85 * hw:.2f} {cy + 0.30 * hh:.2f}, "
-        f"{cx - 1.05 * hw:.2f} {cy - 0.12 * hh:.2f}, "
-        f"{cx - 0.80 * hw:.2f} {cy - 0.45 * hh:.2f} "
-        f"C {cx - 0.52 * hw:.2f} {cy - 0.75 * hh:.2f}, "
-        f"{cx - 0.12 * hw:.2f} {cy - 0.55 * hh:.2f}, "
-        f"{cx:.2f} {cy - 0.20 * hh:.2f} Z"
-    )
+def png_b64(im: Image.Image) -> tuple[str, int, int]:
+    buf = io.BytesIO()
+    im.save(buf, format="PNG", optimize=True)
+    return base64.b64encode(buf.getvalue()).decode("ascii"), im.width, im.height
 
 
-def build_svg() -> str:
-    cx = VW / 2
-    fc, fl = load(680), load(500)
-
-    crepe_size, crepe_track, crepe_baseline = 230, 0.5, 720
-    crepe_d, crepe_w = center(fc, "CREPE", crepe_size, cx, crepe_baseline, crepe_track)
-
-    rule_y = crepe_baseline + crepe_size * 0.11
-    rule_x0 = cx - crepe_w / 2 + crepe_w * 0.015
-    rule_x1 = cx + crepe_w / 2 - crepe_w * 0.015
-
-    lamour_size = crepe_size * 0.255
-    target = crepe_w * 0.60
-    lo, hi = 4.0, 36.0
-    for _ in range(20):
-        mid = (lo + hi) / 2
-        _, w = center(fl, "LAMOUR", lamour_size, cx, 0, mid)
-        if w < target:
-            lo = mid
-        else:
-            hi = mid
-    lamour_track = (lo + hi) / 2
-    lamour_baseline = rule_y + lamour_size * 1.08
-    lamour_d, _ = center(fl, "LAMOUR", lamour_size, cx, lamour_baseline, lamour_track)
-
-    heart_w = crepe_w * 0.74
-    heart_h = heart_w * 0.96
-    desired_tip = lamour_baseline + lamour_size * 0.4
-    heart_cy = desired_tip - heart_h * 0.50
-    heart_d = heart(cx, heart_cy, heart_w, heart_h)
-
-    # Tight viewBox around mark (avoid huge empty padding that makes logo look tiny)
-    content_top = heart_cy - heart_h * 0.55
-    content_bot = max(desired_tip, lamour_baseline + lamour_size * 0.15)
-    content_left = min(cx - crepe_w / 2, cx - heart_w / 2)
-    content_right = max(cx + crepe_w / 2, cx + heart_w / 2)
-    pad = 48
-    vb_x = content_left - pad
-    vb_y = content_top - pad
-    vb_w = (content_right - content_left) + 2 * pad
-    vb_h = (content_bot - content_top) + 2 * pad
-
+def svg_wrap(im: Image.Image) -> str:
+    b64, w, h = png_b64(im)
     return f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb_x:.2f} {vb_y:.2f} {vb_w:.2f} {vb_h:.2f}" fill="none" role="img" aria-label="Crepe L'Amour">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {w} {h}" role="img" aria-label="Crepe L'Amour">
   <title>Crepe L'Amour</title>
-  <!-- Pure vector paths only (no embedded PNG). Transparent background. Tight viewBox. -->
-  <path d="{heart_d}" fill="{HEART}"/>
-  <path d="{crepe_d}" fill="{CREPE_C}"/>
-  <line x1="{rule_x0:.2f}" y1="{rule_y:.2f}" x2="{rule_x1:.2f}" y2="{rule_y:.2f}" stroke="{RULE_C}" stroke-width="3.2" stroke-linecap="square"/>
-  <path d="{lamour_d}" fill="{LAMOUR_C}"/>
+  <image width="{w}" height="{h}" xlink:href="data:image/png;base64,{b64}"/>
 </svg>
 '''
 
 
-def export_png(svg: str, size: int, out: Path, bg=None, pad_r: float = 0.0) -> None:
-    tmp = Path("/tmp/_brand_logo_export.svg")
-    tmp.write_text(svg, encoding="utf-8")
-    if pad_r > 0:
-        inner = int(size * (1 - 2 * pad_r))
-        raw = Path("/tmp/_brand_logo_raw.png")
-        subprocess.run(
-            ["rsvg-convert", "-w", str(inner), "-h", str(inner), "-f", "png", str(tmp), "-o", str(raw)],
-            check=True,
-        )
-        logo = Image.open(raw).convert("RGBA")
+def save_size(sq: Image.Image, size: int, path: Path, bg=None, pad_ratio: float = 0.0) -> None:
+    if pad_ratio > 0:
+        inner = int(size * (1 - 2 * pad_ratio))
+        logo = sq.resize((inner, inner), Image.Resampling.LANCZOS)
         canvas = Image.new("RGBA", (size, size), bg or (0, 0, 0, 0))
-        canvas.paste(logo, ((size - logo.width) // 2, (size - logo.height) // 2), logo)
-        canvas.save(out, "PNG", optimize=True)
+        canvas.paste(logo, ((size - inner) // 2, (size - inner) // 2), logo)
+        canvas.save(path, "PNG", optimize=True)
     else:
-        subprocess.run(
-            ["rsvg-convert", "-w", str(size), "-h", str(size), "-f", "png", str(tmp), "-o", str(out)],
-            check=True,
-        )
-        im = Image.open(out).convert("RGBA")
+        im = sq.resize((size, size), Image.Resampling.LANCZOS)
         if bg is not None:
-            base = Image.new("RGBA", im.size, bg)
+            base = Image.new("RGBA", (size, size), bg)
             base.alpha_composite(im)
             im = base
-        im.save(out, "PNG", optimize=True)
+        im.save(path, "PNG", optimize=True)
 
 
 def main() -> None:
-    if not FONT.exists():
-        raise SystemExit(f"Font not found: {FONT}")
+    if len(sys.argv) < 2:
+        raise SystemExit("Usage: generate-brand-logo.py /path/to/source.png")
+    src = Path(sys.argv[1])
+    if not src.exists():
+        raise SystemExit(f"Not found: {src}")
 
-    svg = build_svg()
-    assert "<image" not in svg.lower() and "base64" not in svg.lower()
+    exact = remove_white_bg(Image.open(src))
+    cropped = tight_crop(exact)
+    sq = to_square(cropped)
+
+    # optional upscale for embed quality
+    embed = cropped
+    if max(embed.size) < 1000:
+        s = 1000 / max(embed.size)
+        embed = embed.resize((int(embed.width * s), int(embed.height * s)), Image.Resampling.LANCZOS)
 
     OUT_LOGO.mkdir(parents=True, exist_ok=True)
     OUT_FAV.mkdir(parents=True, exist_ok=True)
-    (OUT_LOGO / "logo.svg").write_text(svg, encoding="utf-8")
-    (OUT_FAV / "favicon.svg").write_text(svg, encoding="utf-8")
-    (ROOT / "public" / "favicon.svg").write_text(svg, encoding="utf-8")
 
-    export_png(svg, 1024, OUT_LOGO / "logo.png")
-    export_png(svg, 1024, OUT_LOGO / "logo-dark.png")
-    export_png(svg, 96, OUT_FAV / "favicon-96x96.png")
-    export_png(svg, 180, OUT_FAV / "apple-touch-icon.png", bg=(255, 255, 255, 255), pad_r=0.06)
-    export_png(svg, 192, OUT_FAV / "web-app-manifest-192x192.png", bg=(255, 246, 249, 255), pad_r=0.1)
-    export_png(svg, 512, OUT_FAV / "web-app-manifest-512x512.png", bg=(255, 246, 249, 255), pad_r=0.1)
+    logo_1024 = sq.resize((1024, 1024), Image.Resampling.LANCZOS)
+    logo_1024.save(OUT_LOGO / "logo.png", "PNG", optimize=True)
+    logo_1024.save(OUT_LOGO / "logo-dark.png", "PNG", optimize=True)
+    (OUT_LOGO / "logo.svg").write_text(svg_wrap(embed), encoding="utf-8")
 
+    sqe = sq
+    if max(sqe.size) < 512:
+        s = 512 / max(sqe.size)
+        sqe = sqe.resize((int(sqe.width * s), int(sqe.height * s)), Image.Resampling.LANCZOS)
+    icon = svg_wrap(sqe)
+    (OUT_FAV / "favicon.svg").write_text(icon, encoding="utf-8")
+    (ROOT / "public" / "favicon.svg").write_text(icon, encoding="utf-8")
+
+    save_size(sq, 96, OUT_FAV / "favicon-96x96.png")
+    save_size(sq, 180, OUT_FAV / "apple-touch-icon.png", bg=(255, 255, 255, 255), pad_ratio=0.06)
+    save_size(sq, 192, OUT_FAV / "web-app-manifest-192x192.png", bg=(255, 246, 249, 255), pad_ratio=0.1)
+    save_size(sq, 512, OUT_FAV / "web-app-manifest-512x512.png", bg=(255, 246, 249, 255), pad_ratio=0.1)
     for s in (16, 32, 48):
-        export_png(svg, s, Path(f"/tmp/ico{s}.png"))
+        save_size(sq, s, Path(f"/tmp/ico{s}.png"))
     subprocess.run(
         ["magick", "/tmp/ico16.png", "/tmp/ico32.png", "/tmp/ico48.png", str(OUT_FAV / "favicon.ico")],
         check=True,
     )
     subprocess.run(["cp", str(OUT_FAV / "favicon.ico"), str(ROOT / "src" / "app" / "favicon.ico")], check=True)
-    print("Wrote pure SVG + rasters to", OUT_LOGO, "and", OUT_FAV)
+    print("OK", OUT_LOGO / "logo.svg", OUT_LOGO / "logo.png")
 
 
 if __name__ == "__main__":
