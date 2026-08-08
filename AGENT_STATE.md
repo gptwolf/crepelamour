@@ -33,10 +33,10 @@ Build a polished Next.js app matching the Crepe L'Amour moodboard theme (soft pi
 - [x] Overlay QA vs original (layout aligned: heart mid-CREPE, C/E overhang, LAMOUR under rule)
 - [x] Regenerate all logo/favicon rasters from pure SVG
 - [x] Components use `/logo/logo.svg` (Header, Footer, About, Visit)
-- [ ] Commit + push pure-SVG fix to PR
+- [x] Commit + push pure-SVG fix to PR (`901455b`)
 
 ### Status
-**IN PROGRESS** — pure vector logo written; committing/pushing next.
+**DONE** — pure vector logo on `feat/new-brand-logo` (PR #4).
 
 ### Asset targets
 | Path | Requirement |
