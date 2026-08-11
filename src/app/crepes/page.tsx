@@ -9,7 +9,7 @@ import {
 
 const title = "Sweet & Savory Crepe Catering";
 const description =
-  "Made-to-order sweet and savory crepes from a mobile cart — plus keto, gluten-free, and vegan batters for Southern California events. Book Crepe L'Amour for weddings, showers, brunch & more.";
+  "Made-to-order sweet and savory crepes from a mobile cart — plus keto, gluten-free, and vegan batters for Southern California events. Book Crepe Lamour for weddings, showers, brunch & more.";
 const ogImage = "/images/instagram/handheld-strawberry-banana-crepe.png";
 
 export const metadata: Metadata = {
@@ -19,20 +19,20 @@ export const metadata: Metadata = {
     canonical: "/crepes",
   },
   openGraph: {
-    title: `${title} | Crepe L'Amour`,
+    title: `${title} | Crepe Lamour`,
     description:
       "Hand-folded sweet & savory crepes made to order at your event. Southern California cart catering.",
     url: "/crepes",
     images: [
       {
         url: ogImage,
-        alt: "Strawberry banana crepe from Crepe L'Amour catering",
+        alt: "Strawberry banana crepe from Crepe Lamour catering",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${title} | Crepe L'Amour`,
+    title: `${title} | Crepe Lamour`,
     description:
       "Sweet & savory crepe cart catering for SoCal weddings, showers, brunch & more.",
     images: [ogImage],
@@ -66,7 +66,7 @@ export default function CrepesPage() {
         }}
         heroImageSecondary={{
           src: "/images/instagram/savory-crepe-prep.jpg",
-          alt: "Savory crepe being prepared on the Crepe L'Amour cart griddle",
+          alt: "Savory crepe being prepared on the Crepe Lamour cart griddle",
         }}
         includedTitle="How we serve crepes"
         included={[
@@ -140,7 +140,7 @@ export default function CrepesPage() {
         gallery={[
           {
             src: "/images/instagram/wedding-crepe-cart.png",
-            alt: "Wedding crepe cart setup by Crepe L'Amour",
+            alt: "Wedding crepe cart setup by Crepe Lamour",
           },
           {
             src: "/images/instagram/archive3/love-story-wedding-crepes-1.jpg",
@@ -222,7 +222,7 @@ export default function CrepesPage() {
                     <div className="relative aspect-[5/3] overflow-hidden">
                       <Image
                         src={item.image}
-                        alt={`${item.name} from Crepe L'Amour mobile catering`}
+                        alt={`${item.name} from Crepe Lamour mobile catering`}
                         fill
                         sizes="(max-width: 640px) 100vw, 33vw"
                         className="object-cover"

@@ -11,14 +11,14 @@ import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Crepe L'Amour — Mobile Crêpe Catering | Southern California",
+    absolute: "Crepe Lamour — Mobile Crepe Catering | Southern California",
   },
   description: siteConfig.description,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Crepe L'Amour — Mobile Crêpe Catering | Southern California",
+    title: "Crepe Lamour — Mobile Crepe Catering | Southern California",
     description: siteConfig.description,
     url: "/",
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Crepe L'Amour — Mobile Crêpe Catering",
+    title: "Crepe Lamour — Mobile Crepe Catering",
     description:
       "Made-to-order crepes & mini pancakes for SoCal events. Book the cart.",
     images: [siteConfig.ogImage.url],

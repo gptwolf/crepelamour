@@ -3,8 +3,8 @@
  * Set NEXT_PUBLIC_SITE_URL at deploy (e.g. https://www.crepelamour.com).
  */
 export const siteConfig = {
-  name: "Crepe L'Amour",
-  shortName: "Crepe L'Amour",
+  name: "Crepe Lamour",
+  shortName: "Crepe Lamour",
   tagline: "love in every bite",
   description:
     "Made-to-order crepes and mini buttermilk pancakes from a custom cart. Sweet & savory crepe bar catering for weddings, baby showers, birthdays, and brand events across Southern California.",
@@ -20,7 +20,7 @@ export const siteConfig = {
    */
   ogImage: {
     url: "/logo/og-share.png",
-    alt: "Crepe L'Amour crepe cart at an event — mobile crêpe catering",
+    alt: "Crepe Lamour crepe cart at an event — mobile crepe catering",
     width: 1200,
     height: 630,
   },

@@ -33,10 +33,10 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 md:px-8">
-        <Link href="/" className="group flex items-center" aria-label="Crepe L'Amour home">
+        <Link href="/" className="group flex items-center" aria-label="Crepe Lamour home">
           <Image
             src="/logo/logo.svg"
-            alt="Crepe L'Amour"
+            alt="Crepe Lamour"
             width={220}
             height={138}
             className="h-12 w-auto object-contain drop-shadow-sm transition group-hover:scale-[1.03] md:h-14"

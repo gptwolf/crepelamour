@@ -27,7 +27,7 @@ const shots: Shot[] = [
   {
     src: "/images/instagram/poolside-crepe-bowl.png",
     caption: "poolside minis",
-    alt: "Poolside mini pancakes with toppings from Crepe L'Amour",
+    alt: "Poolside mini pancakes with toppings from Crepe Lamour",
     rotate: "rotate-2",
   },
   {
@@ -39,7 +39,7 @@ const shots: Shot[] = [
   {
     src: "/images/instagram/wedding-crepe-cart.png",
     caption: "wedding cart",
-    alt: "Crepe L'Amour wedding crepe cart catering setup",
+    alt: "Crepe Lamour wedding crepe cart catering setup",
     rotate: "rotate-3",
   },
   {

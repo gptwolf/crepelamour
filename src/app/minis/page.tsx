@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     canonical: "/minis",
   },
   openGraph: {
-    title: `${title} | Crepe L'Amour`,
+    title: `${title} | Crepe Lamour`,
     description:
       "Hello Kitty minis and buttermilk stacks — tiny, photogenic, and made to order at your event.",
     url: "/minis",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${title} | Crepe L'Amour`,
+    title: `${title} | Crepe Lamour`,
     description:
       "Mini pancake catering for kids parties, showers & brand events across SoCal.",
     images: [ogImage],

@@ -7,7 +7,7 @@ const menu = [
     desc: "Hand-folded and made to order — Nutella, chocolate drizzle, fresh fruit, whipped cream, and toppings your guests actually want.",
     tag: "Signature",
     image: "/images/instagram/handheld-strawberry-banana-crepe.png",
-    alt: "Made-to-order strawberry banana sweet crepe from the Crepe L'Amour cart",
+    alt: "Made-to-order strawberry banana sweet crepe from the Crepe Lamour cart",
     href: "/crepes#sweet",
   },
   {
@@ -65,7 +65,7 @@ const dietary = [
     name: "Keto crepes",
     desc: "Keto-friendly batter so more of the guest list can join the line.",
     image: "/images/instagram/archive3/keto-friendly-crepes.jpg",
-    alt: "Keto-friendly crepes available for Crepe L'Amour catering",
+    alt: "Keto-friendly crepes available for Crepe Lamour catering",
     href: "/crepes#dietary",
   },
   {
@@ -79,7 +79,7 @@ const dietary = [
     name: "Vegan crepes",
     desc: "Plant-based options available for catering — ask when you book.",
     image: "/images/instagram/archive3/keto-crepes-obsessed.jpg",
-    alt: "Vegan crepe catering option from Crepe L'Amour",
+    alt: "Vegan crepe catering option from Crepe Lamour",
     href: "/crepes#dietary",
   },
 ];

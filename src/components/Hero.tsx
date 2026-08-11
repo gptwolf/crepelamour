@@ -46,7 +46,7 @@ export default function Hero() {
       <div className="relative mx-auto flex max-w-6xl flex-col items-center px-5 md:px-8">
         <div className="fade-up mb-6 text-center md:mb-8">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-rose/30 bg-white/60 px-4 py-1.5 text-xs font-medium tracking-[0.2em] uppercase text-deep-rose backdrop-blur-sm">
-            SoCal Crêpe Catering
+            SoCal Crepe Catering
           </div>
           <h1 className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-[0.06em] text-ink sm:text-4xl md:text-5xl">
             Your event deserves more than dessert —
@@ -57,7 +57,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-ink-soft sm:text-base">
-            Mobile crêpe catering for Southern California — made-to-order sweet
+            Mobile crepe catering for Southern California — made-to-order sweet
             &amp; savory crepes and mini buttermilk pancakes from a custom cart
             at weddings, baby showers, birthdays, and brand events.
           </p>

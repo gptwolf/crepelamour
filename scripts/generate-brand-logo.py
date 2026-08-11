@@ -70,8 +70,8 @@ def png_b64(im: Image.Image) -> tuple[str, int, int]:
 def svg_wrap(im: Image.Image) -> str:
     b64, w, h = png_b64(im)
     return f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {w} {h}" role="img" aria-label="Crepe L'Amour">
-  <title>Crepe L'Amour</title>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {w} {h}" role="img" aria-label="Crepe Lamour">
+  <title>Crepe Lamour</title>
   <image width="{w}" height="{h}" xlink:href="data:image/png;base64,{b64}"/>
 </svg>
 '''

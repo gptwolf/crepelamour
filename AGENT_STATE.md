@@ -1,7 +1,7 @@
-# AGENT_STATE — Crepe L'Amour Next.js App
+# AGENT_STATE — Crepe Lamour Next.js App
 
 ## Goal
-Build a polished Next.js app matching the Crepe L'Amour moodboard theme (soft pink coquette, polaroids, satin bows, glitter stars, princess treats aesthetic) with **generated photorealistic bow images**.
+Build a polished Next.js app matching the Crepe Lamour moodboard theme (soft pink coquette, polaroids, satin bows, glitter stars, princess treats aesthetic) with **generated photorealistic bow images**.
 
 ## Active task: Pure SVG brand logo (no embedded PNG)
 **Branch / worktree:** `feat/new-brand-logo` → `/home/joset/dev/web/crepelamour-new-logo`  

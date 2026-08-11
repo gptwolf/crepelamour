@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     canonical: "/dubai-chocolate",
   },
   openGraph: {
-    title: `${title} | Crepe L'Amour`,
+    title: `${title} | Crepe Lamour`,
     description:
       "The Dubai chocolate line on a mobile cart — minis, crepes, and strawberries with pistachio crunch.",
     url: "/dubai-chocolate",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${title} | Crepe L'Amour`,
+    title: `${title} | Crepe Lamour`,
     description:
       "Pistachio kataifi Dubai chocolate on minis, crepes & strawberries — SoCal cart catering.",
     images: [ogImage],
