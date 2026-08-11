@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-5 text-center md:px-8">
         <Image
           src="/logo/logo.svg"
-          alt="Crepe L'Amour"
+          alt="Crepe Lamour"
           width={260}
           height={163}
           className="h-20 w-auto object-contain md:h-24"
@@ -48,7 +48,7 @@ export default function Footer() {
           </a>
         </nav>
         <p className="text-xs text-ink-soft/80">
-          © {new Date().getFullYear()} Crepe L&apos;Amour · Mobile Crêpe
+          © {new Date().getFullYear()} Crepe Lamour · Mobile Crepe
           Catering · Southern California
         </p>
         <p className="max-w-sm text-[11px] leading-relaxed text-ink-soft/70">

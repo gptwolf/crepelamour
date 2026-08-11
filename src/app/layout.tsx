@@ -28,8 +28,8 @@ const siteUrl = getSiteUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Crepe L'Amour — Mobile Crêpe Catering | Southern California",
-    template: "%s | Crepe L'Amour",
+    default: "Crepe Lamour — Mobile Crepe Catering | Southern California",
+    template: "%s | Crepe Lamour",
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: siteUrl,
     siteName: siteConfig.name,
-    title: "Crepe L'Amour — Mobile Crêpe Catering",
+    title: "Crepe Lamour — Mobile Crepe Catering",
     description:
       "Made-to-order crepes & mini buttermilk pancakes for your event. Southern California cart catering.",
     images: [
@@ -83,9 +83,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Crepe L'Amour — Mobile Crêpe Catering",
+    title: "Crepe Lamour — Mobile Crepe Catering",
     description:
-      "Mobile crêpe catering for weddings, showers, birthdays & brand events across Southern California.",
+      "Mobile crepe catering for weddings, showers, birthdays & brand events across Southern California.",
     images: [siteConfig.ogImage.url],
   },
 };

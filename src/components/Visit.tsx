@@ -61,7 +61,7 @@ export default function Visit() {
               <div className="mb-5 flex justify-center">
                 <Image
                   src="/logo/logo.svg"
-                  alt="Crepe L'Amour"
+                  alt="Crepe Lamour"
                   width={280}
                   height={176}
                   className="h-24 w-auto object-contain md:h-28"

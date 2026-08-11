@@ -24,7 +24,7 @@ export default function About() {
             />
             <Image
               src="/images/IMG_9623.jpg"
-              alt="La Crêperie cart on a hillside terrace at golden hour"
+              alt="La Creperie cart on a hillside terrace at golden hour"
               width={280}
               height={200}
               className="col-span-2 h-40 w-full rounded-3xl object-cover shadow-lg ring-4 ring-white md:h-48"
@@ -48,12 +48,12 @@ export default function About() {
             We bring the
             <br />
             <span className="font-[family-name:var(--font-script)] text-deep-rose normal-case tracking-normal">
-              crêperie
+              creperie
             </span>{" "}
             to you
           </h2>
           <p className="mt-5 leading-relaxed text-ink-soft">
-            Crepe L&apos;Amour is a mobile crepe catering company. We roll up
+            Crepe Lamour is a mobile crepe catering company. We roll up
             with a full cart, toppings bar, and made-to-order sweet or savory
             crepes so guests watch their plate come together live.
           </p>

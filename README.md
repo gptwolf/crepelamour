@@ -1,6 +1,6 @@
-# Crepe L'Amour
+# Crepe Lamour
 
-Coquette-pink Next.js site for **Crepe L'Amour** — mobile crêpe catering across Southern California.
+Coquette-pink Next.js site for **Crepe Lamour** — mobile crepe catering across Southern California.
 
 ## Stack
 
