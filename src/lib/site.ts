@@ -13,6 +13,7 @@ export const siteConfig = {
   locale: "en_US",
   instagram: "https://www.instagram.com/crepe_lamour/",
   instagramHandle: "@crepe_lamour",
+  googleAnalyticsId: "G-M54T98NSZ0",
   areaServed: "Southern California",
   /**
    * Primary share image for iMessage / iOS / Facebook / Twitter link previews.

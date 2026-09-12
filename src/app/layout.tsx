@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Cormorant_Garamond, DM_Sans, Great_Vibes } from "next/font/google";
 import JsonLd from "@/components/JsonLd";
 import { getSiteUrl, siteConfig } from "@/lib/site";
@@ -99,6 +100,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-paper text-ink">
         <JsonLd data={siteStructuredData()} />
         {children}
+        <GoogleAnalytics gaId={siteConfig.googleAnalyticsId} />
       </body>
     </html>
   );
